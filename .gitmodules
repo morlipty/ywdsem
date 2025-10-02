@@ -1,0 +1,12 @@
+[submodule "dotfiles/.zsh/plugins/zsh-bench"]
+	path = dotfiles/.zsh/plugins/zsh-bench
+	url = https://github.com/romkatv/zsh-bench
+[submodule "dotfiles/.zsh/plugins/fast-syntax-highlighting"]
+	path = dotfiles/.zsh/plugins/fast-syntax-highlighting
+	url = https://github.com/zdharma-continuum/fast-syntax-highlighting
+[submodule "dotfiles/.zsh/plugins/zsh-autocomplete"]
+	path = dotfiles/.zsh/plugins/zsh-autocomplete
+	url = https://github.com/marlonrichert/zsh-autocomplete
+[submodule "dotfiles/.zsh/plugins/zsh-autosuggestions"]
+	path = dotfiles/.zsh/plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions

@@ -1,0 +1,17 @@
+[mgr]
+prepend_keymap = [
+  {on = "\\", run  = "quit"},
+  {on = "i", run = "cd  --interactive"},
+  {on = "e", run = "shell ' $*' --cursor=0 --interactive"},
+  {on = "<Enter>", run = "plugin smart-enter"},
+  {on = "l", run = "plugin smart-enter"},
+  {on = "R", run = "rename --empty=stem --cursor=start"},
+  {on = ["g", "t"], run = "cd ~/.local/share/Trash/files", desc = "Trash"},
+  {on = ["g", "f"], run = "cd ~/Documents", desc = "Documents"},
+  {on = ["g", "m"], run = "cd /run/media/lifisage", desc = "Mounts"},
+  {on = ["g", "y"], run = "cd ~/ywdsem", desc = "Backups"}
+]
+[input]
+prepend_keymap = [
+  {on = "<Esc>", run = "close", desc = "Cancel input"}
+]

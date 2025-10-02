@@ -5,7 +5,7 @@ alias c='clear'
 alias ls='eza -a --icons=always'
 alias ll='eza -al --icons=always'
 alias shutdown='systemctl poweroff'
-alias zsh-bench='~/.zsh/zsh-bench/zsh-bench'
+alias zsh-bench='~/.zsh/plugins/zsh-bench/zsh-bench'
 
 #grub
 alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'
@@ -22,6 +22,10 @@ alias paclist='expac --timefmt="%Y-%m-%d %T" "%l\t%n %v" $(pacman -Qqne) | sort'
 alias pacfulllist='expac --timefmt="%Y-%m-%d %T" "%l\t%n %v" $(pacman -Qqn) | sort'
 alias aurlist='expac --timefmt="%Y-%m-%d %T" "%l\t%n %v" $(pacman -Qqme) | sort'
 alias aurfulllist='expac --timefmt="%Y-%m-%d %T" "%l\t%n %v" $(pacman -Qqm) | sort'
+
+#music
+alias musicsampleratecheck='find ~/Music -type f -iname "*.flac" -exec ffprobe -v error -select_streams a:0 -show_entries stream=sample_rate,bit_depth -of csv=p=0 {} \; | sort | uniq -c'
+alias musicalbumartrescheck='find ~/Music -type f -iname "*.flac" -exec ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=p=0 {} \; | sort | uniq -c'
 
 #backup
 alias ywdsem='~/ywdsem/upload_to_git.sh'

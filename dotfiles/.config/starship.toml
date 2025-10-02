@@ -5,4 +5,3 @@ vimcmd_symbol = '[V](bold green) '
 [cmd_duration]
 min_time = 500
 show_milliseconds = true
-show_notifications = true

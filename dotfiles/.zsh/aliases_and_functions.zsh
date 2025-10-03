@@ -1,6 +1,6 @@
 #aliases
 alias ...='cd ~'
-alias clearhistory='rm ./.zsh_history'
+alias clearhistory='rm ~/.zsh_history'
 alias c='clear'
 alias ls='eza -a --icons=always'
 alias ll='eza -al --icons=always'

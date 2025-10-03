@@ -80,6 +80,7 @@ Terminal=(
 
 CliTools=(
   "fd"
+  "bat"
   "eza"
   "fzf"
   "zip"
@@ -120,6 +121,11 @@ Tools=(
 
 Development=(
   "android-tools"
+)
+
+Git=(
+  "lazygit"
+  "git-delta"
 )
 
 Install=(

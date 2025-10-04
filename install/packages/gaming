@@ -1,5 +1,3 @@
-#!/bin/bash
-
 Steam=(
   "vulkan-intel"
   "lib32-vulkan-intel"
@@ -36,5 +34,3 @@ Install=(
   "${Libs[@]}"
   "${Lutris[@]}"
 )
-
-yarem "${Install[@]}"

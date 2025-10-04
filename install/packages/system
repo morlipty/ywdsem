@@ -1,15 +1,3 @@
-#!/bin/bash
-
-Fonts=(
-  "adobe-source-han-sans-jp-fonts"
-  "noto-fonts"
-  "noto-fonts-cjk"
-  "noto-fonts-emoji"
-  "noto-fonts-extra"
-  "ttf-fira-code"
-  "ttf-firacode-nerd"
-)
-
 Intel=(
   "mesa"
   "intel-ucode"
@@ -73,6 +61,7 @@ Languages=(
 Terminal=(
   "zsh"
   "yazi"
+  "atuin"
   "neovim"
   "starship"
   "fastfetch"
@@ -144,5 +133,3 @@ Install=(
   "${Tools[@]}"
   "${Development[@]}"
 )
-
-sudo pacman -S --needed "${Install[@]}"

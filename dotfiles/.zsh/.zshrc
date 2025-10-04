@@ -4,14 +4,14 @@
 #setopts
 setopt autocd
 setopt autopushd
-setopt histignorealldups
 
 #enable history
-HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
-setopt sharehistory
-setopt appendhistory
+#HISTFILE=~/.zsh_history
+#HISTSIZE=10000
+#SAVEHIST=10000
+#setopt sharehistory
+#setopt appendhistory
+#setopt histignorealldups
 
 #prompt
 eval "$(starship init zsh)"
@@ -22,6 +22,8 @@ fuck() {
   fuck "$@"
 }
 source <(fzf --zsh)
+eval "$(atuin init zsh)"
+eval "$(thefuck --alias)"
 
 #plugins
 source ~/.zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
@@ -31,4 +33,5 @@ source ~/.zsh/plugins/sudo.zsh
 zstyle ':autocomplete:*' delay 0.25
 
 #aliases and functions
-source ~/.zsh/aliases_and_functions.zsh
+source ~/.zsh/aliases.zsh
+source ~/.zsh/functions.zsh

@@ -1,4 +1,3 @@
-#aliases
 alias ...='cd ~'
 alias clearhistory='rm ~/.zsh_history'
 alias c='clear'
@@ -29,21 +28,3 @@ alias musicalbumartrescheck='find ~/Music -type f -iname "*.flac" -exec ffprobe 
 
 #backup
 alias ywdsem='~/ywdsem/upload_to_git.sh'
-
-#functions
-pkgupdates() {
-  grep -E "upgraded" /var/log/pacman.log | grep "$1"
-}
-
-lt() {
-  eza -a --tree --level=${1:-1} --icons=always
-}
-
-y() {
-  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-  yazi "$@" --cwd-file="$tmp"
-  if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-    builtin cd -- "$cwd"
-  fi
-  rm -f -- "$tmp"
-}

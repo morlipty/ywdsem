@@ -1,9 +1,6 @@
-Fonts=(
-  "adobe-source-han-sans-jp-fonts"
-  "noto-fonts"
-  "noto-fonts-cjk"
-  "noto-fonts-emoji"
-  "noto-fonts-extra"
-  "ttf-fira-code"
-  "ttf-firacode-nerd"
-)
+noto-fonts
+noto-fonts-cjk
+noto-fonts-emoji
+noto-fonts-extra
+ttf-fira-code
+ttf-firacode-nerd

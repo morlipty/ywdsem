@@ -3,7 +3,6 @@ function fish_greeting
 end
 
 if status is-interactive
-  fish_config theme choose Tomorrow\ Night\ Bright
   fzf --fish | source
   atuin init fish | source
   starship init fish | source

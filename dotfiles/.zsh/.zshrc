@@ -19,6 +19,7 @@ eval "$(starship init zsh)"
 #plugins
 source ~/.zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 source ~/.zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+source /usr/share/doc/pkgfile/command-not-found.zsh
 source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 source ~/.zsh/plugins/sudo.zsh
 zstyle ':autocomplete:*' delay 0.25

@@ -34,7 +34,7 @@ function pkglist --description 'Package info with subcommands; use --full to inc
     end
 
     switch $sub
-        case ya
+        case all
             if test $full -eq 1
                 expac $fmt (pacman -Qq) | sort          # all installed (official + AUR)
             else

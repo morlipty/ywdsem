@@ -1,4 +1,6 @@
-fastfetch --config examples/13 &
+function fish_greeting
+  fastfetch --config examples/13
+end
 
 if status is-interactive
   fzf --fish | source
@@ -6,5 +8,6 @@ if status is-interactive
 end
 
 thefuck --alias | source
+direnv hook fish | source
 zoxide init --cmd cd fish | source
 starship init fish | source

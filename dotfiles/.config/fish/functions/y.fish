@@ -1,4 +1,4 @@
-function y --description 'yazi'
+function y --description 'yazi with quick dir change'
 	set tmp (mktemp -t "yazi-cwd.XXXXXX")
 	yazi $argv --cwd-file="$tmp"
 	if read -z cwd < "$tmp"; and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]

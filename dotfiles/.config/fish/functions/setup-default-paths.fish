@@ -1,4 +1,4 @@
-function setup-default-paths
+function setup-default-paths --description 'Setups default paths'
     set -l default_paths \
         ~/.local/bin
 

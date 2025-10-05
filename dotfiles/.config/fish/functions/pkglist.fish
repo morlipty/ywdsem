@@ -54,26 +54,29 @@ function pkglist --description 'Package info with subcommands; use --full to inc
             end
         case installed
             if test (count $rest) -gt 0
-                grep -E 'installed' $log | grep -E -- "$rest[1]"
+                set pattern (string join '|' -- $rest)
+                rg 'installed' $log | rg -- "$pattern"
             else
-                grep -E 'installed' $log
+                rg 'installed' $log
             end
         case updates
             if test (count $rest) -gt 0
-                grep -E 'upgraded' $log | grep -E -- "$rest[1]"
+                set pattern (string join '|' -- $rest)
+                rg 'upgraded' $log | rg -- "$pattern[1]"
             else
-                grep -E 'upgraded' $log
+                rg 'upgraded' $log
             end
         case removed
             if test (count $rest) -gt 0
-                grep -E 'removed' $log | grep -E -- "$rest[1]"
+                set pattern (string join '|' -- $rest)
+                rg 'removed' $log | rg -- "$pattern[1]"
             else
-                grep -E 'removed' $log
+                rg 'removed' $log
             end
 
 
         case '*'
-            echo "pkglist: unknown subcommand '$sub' (try: pkg --help)" 1>&2
+            echo "pkglist: unknown subcommand '$sub' (try: pkglist --help)" 1>&2
             return 1
     end
 end

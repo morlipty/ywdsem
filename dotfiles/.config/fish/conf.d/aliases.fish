@@ -1,4 +1,3 @@
-abbr -a ... -- 'cd ~'
 alias c 'clear'
 alias ls 'eza -a --icons=always'
 alias ll 'eza -al --icons=always'

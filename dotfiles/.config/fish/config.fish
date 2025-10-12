@@ -8,6 +8,6 @@ if status is-interactive
   starship init fish | source
 end
 
+mise activate fish | source
 thefuck --alias | source
-direnv hook fish | source
 zoxide init --cmd cd fish | source

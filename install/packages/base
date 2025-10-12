@@ -1,0 +1,9 @@
+base
+base-devel
+sudo
+grub
+efibootmgr
+linux
+linux-lts
+linux-firmware
+linux-lts-headers

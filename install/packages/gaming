@@ -1,12 +1,5 @@
-vulkan-intel
 lib32-vulkan-intel
 steam
-
-wine
-wine-mono
-wine-gecko
-winetricks
-
 gamemode
 lib32-gamemode
 vkd3d
@@ -15,7 +8,6 @@ gvfs
 python-pefile
 python-protobuf
 umu-launcher
-
 lutris
 gamescope
 mangohud

@@ -1,7 +1,4 @@
-VirtualBox=(
-  "virtualbox"
-  "virtualbox-guest-iso"
-  "virtualbox-guest-utils-nox"
-  "virtualbox-host-modules-arch"
-)
-
+virtualbox
+virtualbox-guest-iso
+virtualbox-guest-utils-nox
+virtualbox-host-modules-arch

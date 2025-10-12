@@ -1,0 +1,7 @@
+pipewire
+pipewire-pulse
+pipewire-alsa
+pipewire-jack
+pipewire-audio
+sof-firmware
+wireplumber

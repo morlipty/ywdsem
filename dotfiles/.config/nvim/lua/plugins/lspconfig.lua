@@ -14,6 +14,7 @@ return {
 		},
 		opts = {
 			ensure_installed = {
+				"pyright",
 				"lua_ls",
 			},
 		},

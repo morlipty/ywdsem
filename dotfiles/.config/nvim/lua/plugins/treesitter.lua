@@ -7,6 +7,8 @@ return {
 		ensure_installed = {
 			"lua",
 			"python",
+			"regex",
+			"bash",
 		},
 		sync_install = false,
 		highlight = { enable = true },

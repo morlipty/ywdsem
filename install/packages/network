@@ -1,3 +1,4 @@
-networkmanager
-dnscrypt-proxy
 iwd
+firewalld
+dnscrypt-proxy
+networkmanager

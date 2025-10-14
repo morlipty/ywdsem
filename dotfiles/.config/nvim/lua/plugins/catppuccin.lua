@@ -5,4 +5,7 @@ return {
 	opts = {
 		flavour = "mocha",
 	},
+	integrations = {
+		notify = true,
+	},
 }

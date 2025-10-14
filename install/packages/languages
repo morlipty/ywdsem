@@ -3,5 +3,6 @@ npm
 mise
 usage
 jdk-openjdk
+python-pip
 python-pipx
 luarocks

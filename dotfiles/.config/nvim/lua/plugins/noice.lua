@@ -1,6 +1,5 @@
 return {
 	"folke/noice.nvim",
-	---@type noice.Config
 	event = "VeryLazy",
 	opts = {
 		-- add any options here

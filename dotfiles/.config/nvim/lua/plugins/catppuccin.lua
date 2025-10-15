@@ -7,5 +7,9 @@ return {
 	},
 	integrations = {
 		notify = true,
+		mini = {
+			enabled = true,
+			indentscope_color = "mocha",
+		},
 	},
 }

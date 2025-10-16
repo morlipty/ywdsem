@@ -1,17 +1,21 @@
-vim.opt.clipboard = "unnamedplus"
+local o = vim.opt
 
-vim.opt.number = true
-vim.opt.cursorline = true
-vim.opt.relativenumber = true
+o.clipboard = "unnamedplus"
 
--- set tab size to 2 spaces
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.expandtab = true
+o.number = true
+o.cursorline = true
+o.relativenumber = true
 
-vim.opt.wrap = false
+o.tabstop = 2
+o.softtabstop = 2
+o.shiftwidth = 2
+o.expandtab = true
 
-vim.opt.termguicolors = true
+o.wrap = false
+o.termguicolors = true
+o.ignorecase = true
 
-vim.opt.undofile = true
+o.splitbelow = true
+o.splitright = true
+
+o.undofile = true

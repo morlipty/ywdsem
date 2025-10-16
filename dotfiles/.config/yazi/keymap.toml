@@ -1,6 +1,5 @@
 [mgr]
 prepend_keymap = [
-  {on = "\\", run  = "quit"},
   {on = "i", run = "cd  --interactive"},
   {on = "e", run = "shell ' $*' --cursor=0 --interactive"},
   {on = "<Enter>", run = "plugin smart-enter"},

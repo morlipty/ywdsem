@@ -2,32 +2,35 @@ return {
 	"nvim-mini/mini.nvim",
 	version = false,
 	config = function()
+		-- a(round) i(inside) textobjects
 		require("mini.ai").setup({})
-
+		-- icons
 		require("mini.icons").setup({})
-
+		-- cursor under current word
 		require("mini.cursorword").setup({})
-
+		-- git hunks
 		require("mini.diff").setup({})
-
+		-- animations
 		require("mini.animate").setup({
 			cursor = { enable = false },
 		})
-
+		-- starter screen
 		require("mini.starter").setup({})
-
+		-- lists current open buffers
 		require("mini.tabline").setup({})
-
+		-- for testing plugins
 		require("mini.test").setup({})
-
+		-- jump by pressing enter
 		require("mini.jump2d").setup({})
-
+		-- go -> <- via square brackets
 		require("mini.bracketed").setup({})
-
+		-- surround with character
 		require("mini.surround").setup({})
-
+		-- split and join arguments
 		require("mini.splitjoin").setup({})
-
+		-- move selection
+		require("mini.move").setup({})
+		-- highlight patterns in page
 		local hipatterns = require("mini.hipatterns")
 		hipatterns.setup({
 			highlighters = {
@@ -38,16 +41,14 @@ return {
 				note = { pattern = "%f[%w]()NOTE()%f[%W]", group = "MiniHipatternsNote" },
 			},
 		})
-
+		-- indentscope
 		require("mini.indentscope").setup({
 			options = {
 				try_as_border = true,
 			},
 			symbol = "│",
 		})
-
-		require("mini.move").setup({})
-
+		-- autopairs
 		require("mini.pairs").setup({
 			modes = { insert = true, command = true, terminal = false },
 			skip_next = [=[[%w%%%'%[%"%.%`%$]]=],
@@ -55,7 +56,7 @@ return {
 			skip_unbalanced = true,
 			markdown = true,
 		})
-
+		-- hints
 		local miniclue = require("mini.clue")
 		miniclue.setup({
 			triggers = {

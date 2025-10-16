@@ -14,3 +14,5 @@ vim.keymap.set("n", "<leader>tt", function()
 	vim.cmd.terminal()
 	vim.cmd.startinsert()
 end, { desc = "Open terminal (horizontal split)" })
+
+vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>", {})

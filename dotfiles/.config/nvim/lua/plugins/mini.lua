@@ -88,14 +88,27 @@ return {
 				-- `z` key
 				{ mode = "n", keys = "z" },
 				{ mode = "x", keys = "z" },
-			},
 
+				-- mini.bracketed
+				{ mode = "n", keys = "]" },
+				{ mode = "n", keys = "[" },
+				{ mode = "x", keys = "]" },
+				{ mode = "x", keys = "[" },
+
+				-- mini.surrond
+				{ mode = "n", keys = "s" },
+
+				-- mini.ai
+				{ mode = "v", keys = "a" },
+				{ mode = "v", keys = "i" },
+			},
 			window = {
 				delay = 500,
 			},
 
 			clues = {
 				-- Enhance this by adding descriptions for <Leader> mapping groups
+				miniclue.gen_clues.square_brackets(),
 				miniclue.gen_clues.builtin_completion(),
 				miniclue.gen_clues.g(),
 				miniclue.gen_clues.marks(),

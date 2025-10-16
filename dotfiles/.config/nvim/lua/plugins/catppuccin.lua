@@ -4,12 +4,12 @@ return {
 	priority = 1000,
 	opts = {
 		flavour = "mocha",
-	},
-	integrations = {
-		notify = true,
-		mini = {
-			enabled = true,
-			indentscope_color = "mocha",
+		integrations = {
+			notify = true,
+			mini = {
+				enabled = true,
+				indentscope_color = "mauve",
+			},
 		},
 	},
 }

@@ -14,11 +14,47 @@ return {
 			cursor = { enable = false },
 		})
 
+		require("mini.starter").setup({})
+
+		require("mini.tabline").setup({})
+
+		require("mini.test").setup({})
+
+		require("mini.jump2d").setup({})
+
 		require("mini.bracketed").setup({})
 
 		require("mini.surround").setup({})
 
 		require("mini.splitjoin").setup({})
+
+		local hipatterns = require("mini.hipatterns")
+		hipatterns.setup({
+			highlighters = {
+				-- Highlight standalone 'FIXME', 'HACK', 'TODO', 'NOTE'
+				fixme = { pattern = "%f[%w]()FIXME()%f[%W]", group = "MiniHipatternsFixme" },
+				hack = { pattern = "%f[%w]()HACK()%f[%W]", group = "MiniHipatternsHack" },
+				todo = { pattern = "%f[%w]()TODO()%f[%W]", group = "MiniHipatternsTodo" },
+				note = { pattern = "%f[%w]()NOTE()%f[%W]", group = "MiniHipatternsNote" },
+			},
+		})
+
+		require("mini.indentscope").setup({
+			options = {
+				try_as_border = true,
+			},
+			symbol = "│",
+		})
+
+		require("mini.move").setup({})
+
+		require("mini.pairs").setup({
+			modes = { insert = true, command = true, terminal = false },
+			skip_next = [=[[%w%%%'%[%"%.%`%$]]=],
+			skip_ts = { "string" },
+			skip_unbalanced = true,
+			markdown = true,
+		})
 
 		local miniclue = require("mini.clue")
 		miniclue.setup({
@@ -67,32 +103,6 @@ return {
 				miniclue.gen_clues.windows(),
 				miniclue.gen_clues.z(),
 			},
-		})
-
-		local hipatterns = require("mini.hipatterns")
-		hipatterns.setup({
-			highlighters = {
-				-- Highlight standalone 'FIXME', 'HACK', 'TODO', 'NOTE'
-				fixme = { pattern = "%f[%w]()FIXME()%f[%W]", group = "MiniHipatternsFixme" },
-				hack = { pattern = "%f[%w]()HACK()%f[%W]", group = "MiniHipatternsHack" },
-				todo = { pattern = "%f[%w]()TODO()%f[%W]", group = "MiniHipatternsTodo" },
-				note = { pattern = "%f[%w]()NOTE()%f[%W]", group = "MiniHipatternsNote" },
-			},
-		})
-
-		require("mini.indentscope").setup({
-			options = {},
-			symbol = "│",
-		})
-
-		require("mini.move").setup({})
-
-		require("mini.pairs").setup({
-			modes = { insert = true, command = true, terminal = false },
-			skip_next = [=[[%w%%%'%[%"%.%`%$]]=],
-			skip_ts = { "string" },
-			skip_unbalanced = true,
-			markdown = true,
 		})
 	end,
 }

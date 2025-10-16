@@ -12,8 +12,6 @@ vim.opt.expandtab = true
 
 vim.opt.wrap = false
 
-vim.opt.incsearch = true
-
 vim.opt.termguicolors = true
 
 vim.opt.undofile = true

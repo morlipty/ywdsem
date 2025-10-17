@@ -1,2 +1,2 @@
-exit
-
+def new():
+    pass

@@ -1,12 +1,13 @@
 vim.lsp.enable({
 	"lua_ls",
+	"bash_ls",
 	"basedpyright",
 	"ruff",
 })
 
 vim.diagnostic.config({
-	virtual_lines = true,
-	-- virtual_text = true,
+	virtual_lines = false,
+	virtual_text = { spacing = 2, prefix = "●" },
 	underline = true,
 	update_in_insert = false,
 	severity_sort = true,

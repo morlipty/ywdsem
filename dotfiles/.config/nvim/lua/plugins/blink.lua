@@ -37,6 +37,12 @@ return {
 				},
 			},
 
+			cmdline = {
+				completion = {
+					menu = { auto_show = true },
+				},
+			},
+
 			completion = {
 				ghost_text = { enabled = true },
 
@@ -57,7 +63,6 @@ return {
 					window = {
 						border = nil,
 						scrollbar = false,
-						winhighlight = "Normal:BlinkCmpDoc,FloatBorder:BlinkCmpDocBorder,EndOfBuffer:BlinkCmpDoc",
 					},
 					auto_show = true,
 					auto_show_delay_ms = 500,

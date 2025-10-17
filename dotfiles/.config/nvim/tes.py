@@ -1,2 +1,2 @@
-def hello():
-    pass
+exit
+

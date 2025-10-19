@@ -7,11 +7,16 @@ return {
 			fzflua.builtin()
 		end, { desc = "Search" })
 
-		vim.keymap.set("n", "<leader>ft", function()
-			fzflua.grep_project({
-				search = "TODO",
-				rg_opts = [[--column --line-number --no-heading --color=always --smart-case --hidden -g '!.git' -g '!fzf-lua.lua']],
-			})
-		end, { desc = "Search TODO" })
+		vim.keymap.set("n", "<leader>fb", function()
+			fzflua.buffers()
+		end, { desc = "Buffers" })
+
+		vim.keymap.set("n", "<leader>fd", function()
+			fzflua.diagnostics_document()
+		end, { desc = "Documents Diagnostics" })
+
+		vim.keymap.set("n", "<leader>fD", function()
+			fzflua.diagnostics_workspace()
+		end, { desc = "Workspace Diagnostics" })
 	end,
 }

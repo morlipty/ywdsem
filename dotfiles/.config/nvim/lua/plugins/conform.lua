@@ -9,6 +9,7 @@ return {
 			bash = { "shfmt" },
 			sh = { "shfmt" },
 			lua = { "stylua" },
+			xml = { "xmlformatter" },
 			python = { "ruff_fix", "ruff_organize_imports", "ruff_format" },
 		},
 	},

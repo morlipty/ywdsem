@@ -16,3 +16,6 @@ alias musicalbumartrescheck 'find ~/Downloads/Music -type f -iname "*.flac" -exe
 
 #backup
 alias ywdsem '~/ywdsem/upload_to_git.sh'
+
+#sddm theme
+alias sddm-astronaut-thme 'sh -c "$(curl -fsSL https://raw.githubusercontent.com/keyitdev/sddm-astronaut-theme/master/setup.sh)"'

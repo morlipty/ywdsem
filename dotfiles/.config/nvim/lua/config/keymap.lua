@@ -15,6 +15,25 @@ vim.keymap.set("n", "<leader>q", function()
 	end
 end, { desc = "Toggle q command" })
 
+map("n", "<leader>tv", function()
+	vim.cmd.vsplit()
+	vim.cmd.terminal()
+	vim.cmd.startinsert()
+end, { desc = "Open terminal (vertical split)" })
+
+map("n", "<leader>th", function()
+	vim.cmd.split()
+	vim.cmd.terminal()
+	vim.cmd.startinsert()
+end, { desc = "Open terminal (horizontal split)" })
+
+map("n", "<leader>tt", function()
+	vim.cmd.terminal()
+	vim.cmd.startinsert()
+end, { desc = "Open terminal (horizontal split)" })
+
+vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>", {})
+
 -- helper: leave Terminal-mode if needed
 local function exit_term()
 	if vim.fn.mode() == "t" then

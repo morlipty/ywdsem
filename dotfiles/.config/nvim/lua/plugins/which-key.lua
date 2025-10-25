@@ -7,6 +7,10 @@ return {
 			preset = "helix",
 			replace = { ["<leader>"] = "SPC" },
 			show_help = false,
+			triggers = {
+				{ "<auto>", mode = "nixsotc" },
+				{ "s", mode = { "n", "v" } },
+			},
 		})
 	end,
 }

@@ -28,23 +28,6 @@ return {
 		require("mini.move").setup({})
 		-- sessions
 		require("mini.sessions").setup({})
-		-- starter config
-		local starter = require("mini.starter")
-		starter.setup({
-			items = {
-				starter.sections.builtin_actions(),
-				starter.sections.recent_files(10, false),
-				starter.sections.recent_files(10, true),
-				-- Use this if you set up 'mini.sessions'
-				starter.sections.sessions(5, true),
-			},
-			content_hooks = {
-				starter.gen_hook.adding_bullet(),
-				starter.gen_hook.indexing("all", { "Builtin actions" }),
-				starter.gen_hook.padding(3, 2),
-				starter.gen_hook.aligning("center", "center"),
-			},
-		})
 		-- highlight patterns in page
 		local hipatterns = require("mini.hipatterns")
 		hipatterns.setup({
@@ -90,6 +73,31 @@ return {
 				try_as_border = true,
 			},
 			symbol = "│",
+		})
+	end,
+	init = function()
+		vim.api.nvim_create_autocmd("FileType", {
+			pattern = {
+				"fzf",
+				"help",
+				"lazy",
+				"mason",
+				"notify",
+				"sidekick_terminal",
+				"snacks_dashboard",
+				"snacks_terminal",
+				"toggleterm",
+			},
+			callback = function()
+				vim.b.miniindentscope_disable = true
+			end,
+		})
+
+		vim.api.nvim_create_autocmd("User", {
+			pattern = "SnacksDashboardOpened",
+			callback = function(data)
+				vim.b[data.buf].miniindentscope_disable = true
+			end,
 		})
 	end,
 }

@@ -3,6 +3,7 @@ return {
 	config = function()
 		local fzflua = require("fzf-lua")
 		fzflua.setup({
+			"telescope",
 			fzf_colors = true,
 		})
 

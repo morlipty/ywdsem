@@ -1,6 +1,3 @@
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-
 local o = vim.opt
 
 o.clipboard = "unnamedplus"
@@ -22,3 +19,6 @@ o.splitbelow = true
 o.splitright = true
 
 o.undofile = true
+
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "

@@ -4,7 +4,7 @@ end
 
 if status is-interactive
   fzf --fish | source
-  atuin init fish | sed 's/-k up/up/' | source
+  atuin init fish | source
   starship init fish | source
 end
 

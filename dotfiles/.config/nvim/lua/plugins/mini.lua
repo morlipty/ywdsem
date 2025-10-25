@@ -18,8 +18,6 @@ return {
 		require("mini.tabline").setup({})
 		-- for testing plugins
 		require("mini.test").setup({})
-		-- jump by pressing enter
-		require("mini.jump2d").setup({})
 		-- go -> <- via square brackets
 		require("mini.bracketed").setup({})
 		-- surround with character
@@ -92,76 +90,6 @@ return {
 				try_as_border = true,
 			},
 			symbol = "│",
-		})
-		-- autopairs
-		require("mini.pairs").setup({
-			modes = { insert = true, command = true, terminal = false },
-			skip_next = [=[[%w%%%'%[%"%.%`%$]]=],
-			skip_ts = { "string" },
-			skip_unbalanced = true,
-			markdown = true,
-		})
-		-- hints
-		local miniclue = require("mini.clue")
-		miniclue.setup({
-			triggers = {
-				-- Leader triggers
-				{ mode = "n", keys = "<Leader>" },
-				{ mode = "x", keys = "<Leader>" },
-
-				-- Built-in completion
-				{ mode = "i", keys = "<C-x>" },
-
-				-- `g` key
-				{ mode = "n", keys = "g" },
-				{ mode = "x", keys = "g" },
-
-				-- Marks
-				{ mode = "n", keys = "'" },
-				{ mode = "n", keys = "`" },
-				{ mode = "x", keys = "'" },
-				{ mode = "x", keys = "`" },
-
-				-- Registers
-				{ mode = "n", keys = '"' },
-				{ mode = "x", keys = '"' },
-				{ mode = "i", keys = "<C-r>" },
-				{ mode = "c", keys = "<C-r>" },
-
-				-- Window commands
-				{ mode = "n", keys = "<C-w>" },
-
-				-- `z` key
-				{ mode = "n", keys = "z" },
-				{ mode = "x", keys = "z" },
-
-				-- mini.bracketed
-				{ mode = "n", keys = "]" },
-				{ mode = "n", keys = "[" },
-				{ mode = "x", keys = "]" },
-				{ mode = "x", keys = "[" },
-
-				-- mini.surrond
-				{ mode = "n", keys = "s" },
-
-				-- mini.ai
-				{ mode = "v", keys = "a" },
-				{ mode = "v", keys = "i" },
-			},
-			window = {
-				delay = 500,
-			},
-
-			clues = {
-				-- Enhance this by adding descriptions for <Leader> mapping groups
-				miniclue.gen_clues.square_brackets(),
-				miniclue.gen_clues.builtin_completion(),
-				miniclue.gen_clues.g(),
-				miniclue.gen_clues.marks(),
-				miniclue.gen_clues.registers(),
-				miniclue.gen_clues.windows(),
-				miniclue.gen_clues.z(),
-			},
 		})
 	end,
 }

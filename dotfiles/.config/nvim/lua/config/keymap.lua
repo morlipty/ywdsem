@@ -1,23 +1,19 @@
 local map = vim.keymap.set
 
-map("n", "<leader>tv", function()
-	vim.cmd.vsplit()
-	vim.cmd.terminal()
-	vim.cmd.startinsert()
-end, { desc = "Open terminal (vertical split)" })
+local q_enabled = false
+map("n", "q", "<Nop>")
 
-map("n", "<leader>th", function()
-	vim.cmd.split()
-	vim.cmd.terminal()
-	vim.cmd.startinsert()
-end, { desc = "Open terminal (horizontal split)" })
-
-map("n", "<leader>tt", function()
-	vim.cmd.terminal()
-	vim.cmd.startinsert()
-end, { desc = "Open terminal (horizontal split)" })
-
-vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>", {})
+vim.keymap.set("n", "<leader>q", function()
+	if q_enabled then
+		map("n", "q", "<Nop>")
+		print("q disabled")
+		q_enabled = false
+	else
+		vim.keymap.del("n", "q")
+		print("q enabled (macros & cmdline window active)")
+		q_enabled = true
+	end
+end, { desc = "Toggle q command" })
 
 -- helper: leave Terminal-mode if needed
 local function exit_term()

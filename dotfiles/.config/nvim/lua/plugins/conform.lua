@@ -10,6 +10,7 @@ return {
 			sh = { "shfmt" },
 			lua = { "stylua" },
 			xml = { "xmlformatter" },
+			yaml = { "prettier" },
 			python = { "ruff_fix", "ruff_organize_imports", "ruff_format" },
 		},
 	},

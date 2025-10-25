@@ -2,6 +2,9 @@ return {
 	"ibhagwan/fzf-lua",
 	config = function()
 		local fzflua = require("fzf-lua")
+		fzflua.setup({
+			fzf_colors = true,
+		})
 
 		vim.keymap.set("n", "<leader>ff", function()
 			fzflua.builtin()

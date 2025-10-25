@@ -1,5 +1,5 @@
 require("config.settings")
-require("core.lazy")
 require("core.lsp")
 require("config.keymap")
+require("core.lazy")
 vim.cmd("colorscheme catppuccin")

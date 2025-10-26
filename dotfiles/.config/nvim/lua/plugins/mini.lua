@@ -16,8 +16,6 @@ return {
 		})
 		-- lists current open buffers
 		require("mini.tabline").setup({})
-		-- for testing plugins
-		require("mini.test").setup({})
 		-- go -> <- via square brackets
 		require("mini.bracketed").setup({})
 		-- surround with character
@@ -83,10 +81,7 @@ return {
 				"lazy",
 				"mason",
 				"notify",
-				"sidekick_terminal",
 				"snacks_dashboard",
-				"snacks_terminal",
-				"toggleterm",
 			},
 			callback = function()
 				vim.b.miniindentscope_disable = true

@@ -26,5 +26,5 @@
   "precognition.nvim": { "branch": "main", "commit": "2aae2687207029b3611a0e19a289f9e1c7efbe16" },
   "snacks.nvim": { "branch": "main", "commit": "f33aa2017a2671fb4a0e71316f385c8010c8b81b" },
   "which-key.nvim": { "branch": "main", "commit": "b4177e3eaf15fe5eb8357ebac2286d488be1ed00" },
-  "yazi.nvim": { "branch": "main", "commit": "dd90db198cd5937a7644b392315a8488e259653f" }
+  "yazi.nvim": { "branch": "main", "commit": "e9503c9b334f9dae2bb0b12eee84e1908f13d557" }
 }

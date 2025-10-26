@@ -25,7 +25,7 @@ return {
 				},
 				ensure_installed = {
 					"python",
-					"stylua",
+					"lua",
 					"bash",
 				},
 			})

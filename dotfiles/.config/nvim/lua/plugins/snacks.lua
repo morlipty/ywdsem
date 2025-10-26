@@ -7,7 +7,6 @@ return {
 		-- scroll = { enabled = true },
 		picker = { enabled = true },
 		lazygit = { enabled = true },
-		-- indent = { enabled = true },
 		dashboard = {
 			enabled = true,
 			sections = {

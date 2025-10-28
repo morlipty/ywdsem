@@ -1,0 +1,12 @@
+{
+  "group/memory": {
+    "orientation": "vertical",
+    "modules": ["memory#icon", "memory#percentage"],
+  },
+  "memory#icon": {
+    "format": "",
+  },
+  "memory#percentage": {
+    "format": "{percentage}%",
+  },
+}

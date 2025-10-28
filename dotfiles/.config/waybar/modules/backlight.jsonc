@@ -1,0 +1,35 @@
+{
+  "group/backlight": {
+    "orientation": "vertical",
+    "modules": ["backlight#icon", "backlight#percent"],
+  },
+  "backlight#icon": {
+    "format": "{icon}",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+    ],
+    "on-scroll-down": "brightnessctl set 5%-",
+    "on-scroll-up": "brightnessctl set +5%",
+    "tooltip": false,
+  },
+  "backlight#percent": {
+    "format": "{percent}%",
+    "on-scroll-down": "brightnessctl set 5%-",
+    "on-scroll-up": "brightnessctl set +5%",
+    "tooltip": false,
+  },
+}

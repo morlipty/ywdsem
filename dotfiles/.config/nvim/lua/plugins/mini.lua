@@ -10,10 +10,6 @@ return {
 		require("mini.cursorword").setup({})
 		-- git hunks
 		require("mini.diff").setup({})
-		-- animations
-		require("mini.animate").setup({
-			cursor = { enable = false },
-		})
 		-- lists current open buffers
 		require("mini.tabline").setup({})
 		-- go -> <- via square brackets

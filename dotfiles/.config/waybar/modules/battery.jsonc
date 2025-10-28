@@ -1,0 +1,25 @@
+{
+  "group/battery": {
+    "orientation": "vertical",
+    "modules": ["battery#icon", "battery#capacity"],
+  },
+
+  "battery#icon": {
+    "states": {
+      "warning": 30,
+      "critical": 15,
+    },
+    "format": "{icon}",
+    "format-icons": ["", "", "", "", ""],
+    "tooltip": false,
+  },
+
+  "battery#capacity": {
+    "states": {
+      "warning": 30,
+      "critical": 15,
+    },
+    "format": "{capacity}%",
+    "tooltip": false,
+  },
+}

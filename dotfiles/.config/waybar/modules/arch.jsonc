@@ -1,0 +1,7 @@
+{
+  "custom/arch": {
+    "format": "󰣇",
+    "on-click": "rofi -show drun",
+    "tooltip": false,
+  },
+}

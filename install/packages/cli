@@ -3,8 +3,10 @@ bat
 eza
 fzf
 gum
+zip
 bind
 unrar
+unzip
 7zip
 wget
 less
@@ -16,9 +18,9 @@ man-db
 pkgfile
 thefuck
 tealdeer
+trash-cli
 man-pages
 ueberzugpp
 github-cli
 wl-clipboard
 imagemagick
-perl-file-mimeinfo

@@ -8,7 +8,8 @@ prepend_keymap = [
   {on = ["g", "t"], run = "cd ~/.local/share/Trash/files", desc = "Trash"},
   {on = ["g", "f"], run = "cd ~/Documents", desc = "Documents"},
   {on = ["g", "m"], run = "cd /run/media/lifisage", desc = "Mounts"},
-  {on = ["g", "y"], run = "cd ~/ywdsem", desc = "Backups"}
+  {on = ["g", "y"], run = "cd ~/ywdsem", desc = "Backups"},
+  {on = "M", run = "plugin mount"}
 ]
 [input]
 prepend_keymap = [

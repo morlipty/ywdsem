@@ -10,6 +10,7 @@ unzip
 7zip
 wget
 less
+btop
 rhash
 rsync
 rclone

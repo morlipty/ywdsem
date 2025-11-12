@@ -4,3 +4,4 @@ bluez
 blueman
 dnscrypt-proxy
 networkmanager
+nm-connection-editor

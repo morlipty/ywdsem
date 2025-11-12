@@ -1,0 +1,20 @@
+{
+  "include": [
+    "./modules/arch.jsonc",
+    "./modules/hyprland_workspaces.jsonc",
+    "./modules/cpu.jsonc",
+    "./modules/keyboard-state.jsonc",
+    "./modules/clock.jsonc",
+    "./modules/hyprland_language.jsonc",
+    "./modules/memory.jsonc",
+    "./modules/tray.jsonc",
+    "./modules/idle_inhibitor.jsonc",
+    "./modules/power-profiles-daemon.jsonc",
+    "./modules/battery.jsonc",
+    "./modules/backlight.jsonc",
+    "./modules/pulseaudio.jsonc",
+    "./modules/bluetooth.jsonc",
+    "./modules/network.jsonc",
+    "./modules/swaync.jsonc",
+  ],
+}

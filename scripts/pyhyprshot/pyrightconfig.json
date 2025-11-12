@@ -1,0 +1,6 @@
+{
+  "reportImplicitRelativeImport": "none",
+  "extraPaths": ["."],
+  "pythonVersion": "3.17.7",
+  "pythonPlatform": "Linux"
+}

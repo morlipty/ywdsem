@@ -1,0 +1,9 @@
+{
+  "tray": {
+    "icon-size": 20,
+    "spacing": 8,
+    "show-passive-items": true,
+    "reverse-direction": false,
+    "smooth-scrolling-threshold": 1.0,
+  },
+}

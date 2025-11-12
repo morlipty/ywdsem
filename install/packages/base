@@ -1,0 +1,9 @@
+base
+base-devel
+sudo
+grub
+efibootmgr
+dracut
+linux
+linux-lts
+linux-firmware

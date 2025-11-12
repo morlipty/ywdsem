@@ -1,0 +1,26 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 40,
+  "include": "./modules.jsonc",
+
+  "modules-left": ["custom/arch", "hyprland/workspaces"],
+  "modules-center": [
+    "group/cpu",
+    "keyboard-state",
+    "clock",
+    "idle_inhibitor",
+    "group/memory",
+  ],
+  "modules-right": [
+    "tray",
+    "power-profiles-daemon",
+    "group/battery",
+    "group/backlight",
+    "group/pulseaudio",
+    "group/bluetooth",
+    "group/network",
+    "hyprland/language",
+    "custom/swaync",
+  ],
+}

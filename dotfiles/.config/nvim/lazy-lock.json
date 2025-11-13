@@ -16,12 +16,12 @@
   "nvim-colorizer.lua": { "branch": "master", "commit": "81e676d3203c9eb6e4c0ccf1eba1679296ef923f" },
   "nvim-dap": { "branch": "master", "commit": "b38f7d30366d9169d0a623c4c85fbcf99d8d58bb" },
   "nvim-dap-python": { "branch": "master", "commit": "64652d1ae1db80870d9aac7132d76e37acd86a26" },
-  "nvim-dap-view": { "branch": "main", "commit": "502990690cbde93d1b1065faff6e5ae1ca8be72d" },
+  "nvim-dap-view": { "branch": "main", "commit": "4b0adae3dd2b1eb17b5ab69d69327bbb93d33939" },
   "nvim-treesitter": { "branch": "main", "commit": "b50774079aa3de80a06dce1634e7e1aa26d25848" },
   "nvim-treesitter-context": { "branch": "master", "commit": "660861b1849256398f70450afdf93908d28dc945" },
   "plenary.nvim": { "branch": "master", "commit": "b9fd5226c2f76c951fc8ed5923d85e4de065e509" },
   "precognition.nvim": { "branch": "main", "commit": "2aae2687207029b3611a0e19a289f9e1c7efbe16" },
   "render-markdown.nvim": { "branch": "main", "commit": "f58c05f349d6e7650f4b40b0df1514400f0c10de" },
   "which-key.nvim": { "branch": "main", "commit": "3aab2147e74890957785941f0c1ad87d0a44c15a" },
-  "yazi.nvim": { "branch": "main", "commit": "5595a1debd8037df142d64be819b5f826c223d09" }
+  "yazi.nvim": { "branch": "main", "commit": "62e3c95562bfa9728720c666b682c601fe0c17b9" }
 }

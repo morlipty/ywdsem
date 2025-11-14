@@ -23,7 +23,7 @@ vk.set("n", "<C-k>", "<C-w><C-k>")
 vk.set({ "n", "v" }, "<leader>y", '"+y', { desc = "Yank to system clipboard" })
 vk.set({ "n", "v" }, "<leader>p", '"+p', { desc = "Paste from system clipboard" })
 
--- Clear highlightings
+-- Clear highlighting
 vk.set("n", "<Esc>", "<cmd>noh<CR>")
 
 -- Toggle wrapping

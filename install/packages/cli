@@ -8,11 +8,7 @@ grim
 bind
 7zip
 wget
-btop
-lnav
 slurp
-satty
-tokei
 rsync
 zoxide
 man-db

@@ -3,6 +3,7 @@ vim.lsp.enable({
 	"bash_ls",
 	"basedpyright",
 	"ruff",
+  "harper_ls"
 })
 
 vim.diagnostic.config({

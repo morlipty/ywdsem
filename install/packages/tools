@@ -1,5 +1,6 @@
 rofi
 swww
+satty
 copyq
 loupe
 waybar
@@ -8,6 +9,7 @@ scrcpy
 baobab
 udiskie
 xournalpp
+celluloid
 syncthing
 obs-studio
 qalculate-gtk

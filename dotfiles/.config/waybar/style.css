@@ -17,6 +17,17 @@ tooltip,
   border-radius: 10px;
 }
 
+#tray * {
+  box-shadow: none;
+  border-radius: 0px;
+  border: none;
+}
+
+#tray menu menuitem:hover {
+  background-color: @color1;
+  color: @background;
+}
+
 .modules-left,
 .modules-center,
 .modules-right {

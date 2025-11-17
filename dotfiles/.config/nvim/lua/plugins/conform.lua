@@ -21,6 +21,7 @@ return {
 				yaml = { "prettier" },
 				css = { "prettier" },
 				python = { "ruff_fix", "ruff_organize_imports", "ruff_format" },
+				markdown = { "prettier" },
 			},
 		})
 		vim.keymap.set({ "n", "x" }, "<leader><leader>", function()

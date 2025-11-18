@@ -2,22 +2,31 @@ return {
 	"nvim-lualine/lualine.nvim",
 
 	config = function()
+		local catppuccin = require("lualine.themes.catppuccin")
+		for _, mode in pairs(catppuccin) do
+			if mode.c then
+				mode.c.bg = "none"
+			end
+		end
+
 		local lualine = require("lualine")
 		lualine.setup({
-			theme = "catppuccin-mocha",
 			options = {
+				theme = catppuccin,
+				globalstatus = true,
 				section_separators = { left = "", right = "" },
 			},
 			sections = {
-				lualine_a = { { "mode", separator = { left = "" }, right_padding = 2 } },
-				lualine_b = { "filename", "branch" },
-				lualine_c = {
-					"%=",
+				lualine_a = {
+					{ "mode", separator = { left = "  " }, right_padding = 2 },
 				},
 				lualine_x = {},
-				lualine_y = { "filetype", "progress" },
+				lualine_y = {
+					{ "filetype", icon_only = true },
+					{ "lsp_status", symbols = { done = "Done" } },
+				},
 				lualine_z = {
-					{ "location", separator = { right = "" }, left_padding = 2 },
+					{ "location", separator = { right = "  " }, left_padding = 2 },
 				},
 			},
 		})

@@ -12,10 +12,10 @@ return {
 		"mfussenegger/nvim-dap",
 
 		config = function()
-			vim.fn.sign_define("DapBreakpoint", { text = "🐞" })
-
 			local dap = require("dap")
 			local widgets = require("dap.ui.widgets")
+
+			vim.fn.sign_define("DapBreakpoint", { text = "🐞" })
 
 			vim.keymap.set("n", "<F5>", function()
 				dap.continue()

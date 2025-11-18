@@ -20,11 +20,9 @@ return {
 			"indentscope",
 			"move",
 			"notify",
-			-- "pairs",
 			"sessions",
 			"splitjoin",
 			"starter",
-			-- "statusline",
 			"surround",
 			"tabline",
 		}) do

@@ -9,6 +9,7 @@ return {
 		grug.setup({
 			headerMaxWidth = 80,
 		})
+
 		vim.keymap.set("n", "<leader>sr", function()
 			local ext = vim.bo.buftype == "" and vim.fn.expand("%:e")
 			grug.open({

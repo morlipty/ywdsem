@@ -8,7 +8,9 @@ return {
 		local markview = require("markview")
 		local presets = require("markview.presets")
 		local checkboxes = require("markview.extras.checkboxes")
+
 		checkboxes.setup({})
+
 		markview.setup({
 
 			preview = {

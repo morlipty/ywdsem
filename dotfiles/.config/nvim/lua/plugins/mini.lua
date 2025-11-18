@@ -2,9 +2,6 @@ return {
 	"nvim-mini/mini.nvim",
 
 	version = false,
-	init = function()
-		require("plugins.mini._autocmds")()
-	end,
 
 	config = function()
 		for _, m in ipairs({

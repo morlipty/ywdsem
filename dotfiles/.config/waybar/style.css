@@ -1,4 +1,4 @@
-@import "../../.cache/wal/colors-waybar.css";
+@import "colors.css";
 
 * {
   border: none;
@@ -13,7 +13,7 @@
 
 tooltip,
 #tray menu {
-  background: @color1;
+  background: @inverse_primary;
   border-radius: 10px;
 }
 
@@ -24,14 +24,14 @@ tooltip,
 }
 
 #tray menu menuitem:hover {
-  background-color: @color1;
+  background-color: @inverse_primary;
   color: @background;
 }
 
 .modules-left,
 .modules-center,
 .modules-right {
-  background: @color1;
+  background: @inverse_primary;
   border-radius: 10px;
   margin: 8px 8px 0px;
 }
@@ -51,13 +51,13 @@ tooltip,
 }
 
 #workspaces button.active {
-  background: @color3;
+  background: @on_primary;
   border-radius: 10px;
   transition: background-color 0.5s ease;
 }
 
 #workspaces button:hover {
-  background: @color2;
+  background: @primary_container;
   border-radius: 10px;
   box-shadow: inherit;
   text-shadow: inherit;
@@ -71,8 +71,8 @@ tooltip,
 }
 
 #workspaces button.urgent {
-  background: @color5;
-  color: @color1;
+  background: @secondary;
+  color: @primary;
   border-radius: 10px;
   animation: blink 2s linear 3;
 }
@@ -80,18 +80,38 @@ tooltip,
 #keyboard-state,
 #idle_inhibitor {
   min-width: 32px;
+  padding: 0px;
+  margin: 0px;
 }
 
 #keyboard-state label.locked {
-  color: @color2;
+  color: @primary_container;
 }
 
 #idle_inhibitor.activated {
-  color: @color2;
+  color: @primary_container;
 }
 
 #clock {
   margin: 0px 10px;
+}
+
+#cpu,
+#memory {
+  margin: 1px 4px 0px 4px;
+}
+
+#cpu.icon,
+#memory.icon {
+  margin: 0px;
+  padding: 0px;
+}
+
+#cpu.usage,
+#memory.percentage {
+  margin: 0px;
+  min-width: 30px;
+  font-size: 12px;
 }
 
 #tray {
@@ -108,9 +128,7 @@ tooltip,
 #pulseaudio,
 #backlight,
 #network,
-#bluetooth,
-#cpu,
-#memory {
+#bluetooth {
   margin: 1px 0px 0px 8px;
 }
 
@@ -118,9 +136,7 @@ tooltip,
 #pulseaudio.icon,
 #backlight.icon,
 #network.icon,
-#bluetooth.icon,
-#cpu.icon,
-#memory.icon {
+#bluetooth.icon {
   margin: 0px;
   padding: 0px;
 }
@@ -129,16 +145,14 @@ tooltip,
 #pulseaudio.volume,
 #backlight.percent,
 #network.name,
-#bluetooth.status,
-#cpu.usage,
-#memory.percentage {
+#bluetooth.status {
   margin: 0px;
   min-width: 30px;
   font-size: 12px;
 }
 
 #battery.icon.charging {
-  color: @color5;
+  color: @secondary;
 }
 
 #language {

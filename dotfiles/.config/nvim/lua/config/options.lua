@@ -32,7 +32,7 @@ o.breakindent = true              -- Every wrapped line will continue visually i
 
 -- Visual settings
 o.signcolumn = "yes:2"            -- Always show a sign column with 2 width
-o.statuscolumn = "│%l│%s│"        -- Status column style
+o.statuscolumn = "│%s│%l│ "       -- Status column style
 o.laststatus = 3                  -- Single status line
 o.smoothscroll = true             -- Enable smooth scrolling
 o.scrolloff = 10                  -- Keep 10 lines above/below cursor

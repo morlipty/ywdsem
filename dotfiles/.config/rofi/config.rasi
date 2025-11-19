@@ -17,7 +17,7 @@ window {
   border-radius                 : 15px;
   border-color                  : transparent;
   background-color              : transparent;
-  background-image              : url("~/.cache/wallpapers/blurred_wallpaper.png", width);
+  background-image              : url("~/.cache/wallpapers/blurred_wallpaper.png", height);
 }
 
 mainbox {
@@ -88,13 +88,13 @@ element-text {
 }
 
 element normal.normal {
-  background-color              : black / 20%;
+  background-color              : black / 10%;
   text-color                    : @primary;
 }
 
 
 element alternate.normal {
-  background-color              : black / 20%;
+  background-color              : black / 10%;
   text-color                    : @primary;
 }
 

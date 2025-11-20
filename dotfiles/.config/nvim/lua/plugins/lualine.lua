@@ -14,20 +14,44 @@ return {
 			options = {
 				theme = catppuccin,
 				globalstatus = true,
-				section_separators = { left = "", right = "" },
+				section_separators = {
+					left = "",
+					right = "",
+				},
+				disabled_filetypes = {
+					statusline = {
+						"ministarter",
+					},
+				},
 			},
 			sections = {
 				lualine_a = {
-					{ "mode", separator = { left = "  " }, right_padding = 2 },
+					{
+						"mode",
+						separator = { left = " " },
+						right_padding = 2,
+					},
 				},
-				lualine_c = { { "filename", path = 3 } },
+				lualine_c = {
+					{ "filename", path = 3 },
+				},
 				lualine_x = {},
 				lualine_y = {
-					{ "filetype", icon_only = false },
-					{ "lsp_status", symbols = { done = "Done" } },
+					{
+						"filetype",
+						icon_only = false,
+					},
+					{
+						"lsp_status",
+						symbols = { done = "Done" },
+					},
 				},
 				lualine_z = {
-					{ "location", separator = { right = "  " }, left_padding = 2 },
+					{
+						"location",
+						separator = { right = " " },
+						left_padding = 2,
+					},
 				},
 			},
 		})

@@ -25,7 +25,9 @@ return {
 			},
 		})
 		vim.keymap.set({ "n", "x" }, "<leader><leader>", function()
-			require("conform").format({ lsp_fallback = true })
+			require("conform").format({
+				lsp_fallback = true,
+			})
 		end, { desc = "Format file" })
 	end,
 }

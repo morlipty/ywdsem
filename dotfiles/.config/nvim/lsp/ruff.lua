@@ -1,9 +1,6 @@
 ---@type vim.lsp.Config
 return {
-	cmd = {
-		"ruff",
-		"server",
-	},
+	cmd = { "ruff", "server" },
 	filetypes = {
 		"python",
 	},

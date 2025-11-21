@@ -14,7 +14,7 @@ desc = "Run interactive cd to go"
 
 [[mgr.prepend_keymap]]
 on = "e"
-run = "shell ' $*' --cursor=0 --interactive"
+run = "shell ' $0' --cursor=0 --interactive"
 desc = "Run command to that file"
 
 [[mgr.prepend_keymap]]

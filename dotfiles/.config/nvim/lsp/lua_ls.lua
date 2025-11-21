@@ -7,13 +7,14 @@ return {
 		"lua",
 	},
 	root_markers = {
-		".git",
-		".luacheckrc",
+		".emmyrc.json",
 		".luarc.json",
 		".luarc.jsonc",
+		".luacheckrc",
 		".stylua.toml",
+		"stylua.toml",
 		"selene.toml",
 		"selene.yml",
-		"stylua.toml",
+		".git",
 	},
 }

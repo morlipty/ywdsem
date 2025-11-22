@@ -1,12 +1,12 @@
 return {
 	"stevearc/conform.nvim",
 
-	config = function()
+  config = function()
 		local conform = require("conform")
 		conform.setup({
 			default_format_opts = {
 				quiet = false,
-				async = true,
+				async = false,
 				timeout_ms = 3000,
 				lsp_format = "fallback",
 			},

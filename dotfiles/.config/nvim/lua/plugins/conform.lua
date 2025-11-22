@@ -6,10 +6,11 @@ return {
 		conform.setup({
 			default_format_opts = {
 				quiet = false,
-				async = false,
+				async = true,
 				timeout_ms = 3000,
 				lsp_format = "fallback",
 			},
+
 			formatters_by_ft = {
 				python = { "ruff_fix", "ruff_organize_imports", "ruff_format" },
 				lua = { "stylua" },
@@ -24,10 +25,9 @@ return {
 				markdown = { "prettier" },
 			},
 		})
-		vim.keymap.set({ "n", "x" }, "<leader><leader>", function()
-			require("conform").format({
-				lsp_fallback = true,
-			})
+
+		vim.keymap.set({ "n", "x" }, "<leader>f", function()
+			require("conform").format({})
 		end, { desc = "Format file" })
 	end,
 }

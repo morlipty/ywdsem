@@ -1,12 +1,19 @@
+-- LSP list to enable
 vim.lsp.enable({
+	-- Lua
 	"lua_ls",
+	-- Bash
 	"bash_ls",
+	-- Python
 	"basedpyright",
 	"ruff",
+	-- Spell
 	"harper_ls",
+	-- Markdown
 	"marksman",
 })
 
+-- Diagnostics configuration
 vim.diagnostic.config({
 	virtual_lines = false,
 	virtual_text = { spacing = 2, prefix = "●" },
@@ -31,6 +38,7 @@ vim.diagnostic.config({
 	},
 })
 
+-- Keymaps
 -- Hover on buffer
 vim.keymap.set("n", "<leader>lh", function()
 	vim.lsp.buf.hover()

@@ -8,6 +8,8 @@ return {
 			fzf_colors = true,
 		})
 
+		fzflua.register_ui_select()
+
 		vim.keymap.set("n", "\\\\", function()
 			fzflua.builtin()
 		end, { desc = "Search" })

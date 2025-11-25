@@ -53,11 +53,11 @@ return {
 				dap.run_last()
 			end, { desc = "dap run last" })
 
-			vim.keymap.set({ "n", "v" }, "<Leader>dh", function()
+			vim.keymap.set({ "n", "x" }, "<Leader>dh", function()
 				widgets.hover()
 			end, { desc = "dap hover" })
 
-			vim.keymap.set({ "n", "v" }, "<Leader>dp", function()
+			vim.keymap.set({ "n", "x" }, "<Leader>dp", function()
 				widgets.preview()
 			end, { desc = "dap preview" })
 

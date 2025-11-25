@@ -11,7 +11,7 @@ return {
 			show_help = false,
 			triggers = {
 				{ "<auto>", mode = "nixsotc" },
-				{ "s", mode = { "n", "v" } },
+				{ "s", mode = { "n", "x" } },
 			},
 		})
 	end,

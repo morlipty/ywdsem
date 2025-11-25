@@ -19,10 +19,6 @@ vk.set("n", "<C-l>", "<C-w><C-l>")
 vk.set("n", "<C-j>", "<C-w><C-j>")
 vk.set("n", "<C-k>", "<C-w><C-k>")
 
--- Connection with system clipboard
-vk.set({ "n", "v" }, "<leader>y", '"+y', { desc = "Yank to system clipboard" })
-vk.set({ "n", "v" }, "<leader>p", '"+p', { desc = "Paste from system clipboard" })
-
 -- Clear highlighting
 vk.set("n", "<Esc>", "<cmd>noh<CR>")
 

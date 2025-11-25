@@ -15,5 +15,4 @@ else
   mise activate fish --shims | source
 end
 
-thefuck --alias | source
 zoxide init --cmd cd fish | source

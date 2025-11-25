@@ -1,7 +1,5 @@
 iwd
 firewalld
-bluez
-blueman
+python-pyqt6
 dnscrypt-proxy
 networkmanager
-nm-connection-editor

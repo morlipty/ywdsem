@@ -1,11 +1,8 @@
 uv
 npm
 mise
-cmake
-meson
 rustup
 jre-openjdk
 python-pip
 python-pipx
-python-debugpy
 luarocks

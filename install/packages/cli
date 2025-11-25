@@ -3,18 +3,14 @@ jq
 bat
 eza
 fzf
-gum
-grim
-bind
+less
 7zip
 wget
-slurp
 rsync
 zoxide
 man-db
 ripgrep
 pkgfile
-thefuck
 tealdeer
 trash-cli
 man-pages
@@ -22,6 +18,4 @@ ueberzugpp
 github-cli
 imagemagick
 lsb-release
-handlr-regex
 wl-clipboard
-brightnessctl

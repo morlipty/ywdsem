@@ -1,6 +1,5 @@
 base
 base-devel
-sudo
 grub
 efibootmgr
 dracut

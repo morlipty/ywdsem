@@ -3,6 +3,7 @@ jq
 bat
 eza
 fzf
+bind
 less
 7zip
 wget

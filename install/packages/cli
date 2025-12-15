@@ -7,6 +7,7 @@ bind
 less
 7zip
 wget
+aria2
 rsync
 zoxide
 man-db

@@ -8,11 +8,6 @@ run = 'shell --block -- ~/ywdsem/scripts/open-with/open-with.sh "$0"'
 desc = "Open the hovered item with"
 
 [[mgr.prepend_keymap]]
-on = "i"
-run = "cd --interactive"
-desc = "Run interactive cd to go"
-
-[[mgr.prepend_keymap]]
 on = "e"
 run = "shell ' $0' --cursor=0 --interactive"
 desc = "Run command to that file"

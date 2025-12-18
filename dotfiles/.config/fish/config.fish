@@ -3,14 +3,15 @@ function fish_greeting
 end
 
 if status is-interactive
+
+  function fish_user_key_bindings
+    fish_vi_key_bindings
+  end
+
   fzf --fish | source
   atuin init fish | source
   starship init fish | source
   mise activate fish | source
-  function fish_user_key_bindings
-    fish_default_key_bindings -M insert
-    fish_vi_key_bindings --no-erase insert
-  end
 else 
   mise activate fish --shims | source
 end

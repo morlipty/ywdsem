@@ -2,3 +2,7 @@ pipewire-pulse
 pipewire-alsa
 pipewire-jack
 sof-firmware
+gst-plugin-va
+gst-plugins-good
+gst-plugins-bad
+gst-plugins-ugly

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=QtScrcpy
+Comment=Display and control Android devices via USB or over network
+Exec=/home/morlipty/Applications/QtScrcpy/QtScrcpy-ubuntu-20.04-gcc_64.AppImage
+Icon=/home/morlipty/Applications/QtScrcpy/QtScrcpy.png
+Categories=Utility;
+Terminal=false
+StartupNotify=true

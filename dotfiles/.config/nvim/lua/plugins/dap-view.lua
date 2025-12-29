@@ -1,6 +1,5 @@
 return {
 	"igorlfs/nvim-dap-view",
-	event = "VeryLazy",
 
 	config = function()
 		local dap_view = require("dap-view")

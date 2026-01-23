@@ -27,7 +27,7 @@ function pkglist --description 'Package info with subcommands; use --full to inc
         echo '  pkglist aur [--full]              # AUR explicit or all AUR'
         echo '  pkglist installed [pkg/pattern]   # show pacman installs'
         echo '  pkglist updates [pkg/pattern]     # show pacman upgrades'
-        echo '  pkglist removed [pkg/pattern]     #show pacman uninstalls'
+        echo '  pkglist removed [pkg/pattern]     # show pacman uninstalls'
         echo 'Flags:'
         echo '  -f, --full               # include dependencies'
         return 0

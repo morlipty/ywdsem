@@ -2,7 +2,6 @@ return {
 	"folke/lazydev.nvim",
 
 	ft = "lua",
-	cmd = "LazyDev",
 
 	config = function()
 		local lazydev = require("lazydev")

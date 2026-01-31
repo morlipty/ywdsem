@@ -1,4 +1,3 @@
----@brief
 local function set_python_path(command)
 	local path = command.args
 	local clients = vim.lsp.get_clients({

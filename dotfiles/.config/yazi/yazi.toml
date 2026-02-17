@@ -1,20 +1,16 @@
 [mgr]
-
 show_hidden = true
 sort_by = "natural"
 linemode = "size"
 
 [opener]
-
 open = [
   { run = 'xdg-open "$@"', orphan = true, desc = "Open" },
 ]
-
 edit = [
   { run = 'nvim "$@"', block = true },
   { run = 'code "$@"', orphan = true },
 ]
-
 play = [
   { run = 'xdg-open "$@"', orphan = true, desc = "Open" },
 ]
@@ -23,10 +19,10 @@ play = [
 
 [[plugin.prepend_fetchers]]
 id = "git"
-name = "*"
+url = "*"
 run = "git"
 
 [[plugin.prepend_fetchers]]
 id = "git"
-name = "*/"
+url = "*/"
 run = "git"

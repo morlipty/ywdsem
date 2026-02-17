@@ -1,0 +1,7 @@
+iwd
+firewalld
+python-pyqt6
+dnscrypt-proxy
+networkmanager
+wireless-regdb
+firewall-applet

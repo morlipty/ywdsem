@@ -1,0 +1,7 @@
+base
+base-devel
+grub
+efibootmgr
+linux
+linux-lts
+linux-firmware

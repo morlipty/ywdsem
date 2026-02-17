@@ -1,0 +1,4 @@
+dotfiles/.config/nvim/lazy-lock.json
+dotfiles/.config/hypr/colors.conf
+dotfiles/.config/rofi/colors.rasi
+dotfiles/.config/waybar/colors.css

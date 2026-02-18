@@ -1,5 +1,7 @@
 iwd
 firewalld
+bluez
+bluez-utils
 python-pyqt6
 dnscrypt-proxy
 networkmanager

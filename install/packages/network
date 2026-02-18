@@ -1,9 +1,8 @@
 iwd
-firewalld
-bluez
-bluez-utils
-python-pyqt6
-dnscrypt-proxy
 networkmanager
 wireless-regdb
+dnscrypt-proxy
+bluez
+bluez-utils
+firewalld
 firewall-applet

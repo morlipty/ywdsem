@@ -10,7 +10,7 @@ vk.set("n", "<leader>lgd", function()
 	vim.lsp.buf.definition()
 end, { desc = "Go to definition" })
 
--- Go to references 
+-- Go to references
 vk.set("n", "<leader>lgr", function()
 	vim.lsp.buf.references()
 end, { desc = "Go to references" })
@@ -20,12 +20,12 @@ vk.set("n", "<leader>lgi", function()
 	vim.lsp.buf.implementation()
 end, { desc = "Go to implementation" })
 
--- Go to type definition 
+-- Go to type definition
 vk.set("n", "<leader>lgt", function()
 	vim.lsp.buf.type_definition()
 end, { desc = "Go to type definition" })
 
--- Go to type declaration 
+-- Go to type declaration
 vk.set("n", "<leader>lgD", function()
 	vim.lsp.buf.declaration()
 end, { desc = "Go to type declaration" })
@@ -35,7 +35,7 @@ vk.set("n", "<leader>cr", function()
 	vim.lsp.codelens.run()
 end, { desc = "Codelens run" })
 
--- Codelens refresh 
+-- Codelens refresh
 vk.set("n", "<leader>cR", function()
 	vim.lsp.codelens.refresh()
 end, { desc = "Codelens refresh" })

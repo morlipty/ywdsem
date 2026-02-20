@@ -1,8 +1,14 @@
 #!/usr/bin/env bash
+
 file="$1"
 mime=$(xdg-mime query filetype "$file")
+apps=()
 
-rg -l "MimeType=.*$mime" /usr/share/applications/*.desktop |
-  sed 's|.*/||; s|\.desktop$||' |
-  fzf --prompt="Open with: " |
-  xargs -r -I{} gio launch /usr/share/applications/{}.desktop "$file"
+while IFS= read -r desktop; do
+  apps+=("$(basename "$desktop" .desktop)")
+done < <(rg -l "MimeType=.*$mime" /usr/share/applications/*.desktop)
+
+chosen=$(printf '%s\n' "${apps[@]}" | sort | fzf --prompt="Open with: ")
+[ -n "$chosen" ] || exit 0
+
+gio launch "/usr/share/applications/$chosen.desktop" "$file"

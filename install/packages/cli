@@ -11,6 +11,7 @@ wget
 unrar
 aria2
 rsync
+strace
 zoxide
 man-db
 pkgfile

@@ -4,7 +4,15 @@ return {
 
 		config = function()
 			local mason = require("mason")
-			mason.setup({})
+			mason.setup({
+				ui = {
+					icons = {
+						package_installed = "✓",
+						package_pending = "➜",
+						package_uninstalled = "✗",
+					},
+				},
+			})
 
 			local mr = require("mason-registry")
 			local ensure = {
@@ -16,7 +24,7 @@ return {
 				"stylua",
 				-- Bash
 				"shfmt",
-        "shellcheck",
+				"shellcheck",
 				"bash-language-server",
 				-- XML
 				"xmlformatter",

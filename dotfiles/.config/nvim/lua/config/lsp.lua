@@ -1,6 +1,6 @@
 -- LSP list to enable
-vim.lsp.enable({
 	-- Lua
+vim.lsp.enable({
 	"lua_ls",
 	-- Bash
 	"bashls",
@@ -30,10 +30,6 @@ vim.diagnostic.config({
 			[vim.diagnostic.severity.WARN] = "󰀪 ",
 			[vim.diagnostic.severity.INFO] = "󰋽 ",
 			[vim.diagnostic.severity.HINT] = "󰌶 ",
-		},
-		numhl = {
-			[vim.diagnostic.severity.ERROR] = "ErrorMsg",
-			[vim.diagnostic.severity.WARN] = "WarningMsg",
 		},
 	},
 })

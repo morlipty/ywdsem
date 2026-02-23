@@ -5,7 +5,6 @@ abbr el 'eza -al'
 #package manager
 abbr pkglist 'paru -Qq | fzf --style full --preview "paru -Qi {}; rg \'(installed|upgraded|removed) {} \' /var/log/pacman.log"'
 abbr pkghist 'tspin /var/log/pacman.log | rg "(installed|removed|upgraded)" | tac | fzf --ansi --no-sort'
-abbr reflector-update 'sudo reflector --verbose --country Iran,Germany,France --latest 50 --sort rate --save /etc/pacman.d/mirrorlist'
 abbr pacunlock 'sudo rm -i /var/lib/pacman/db.lck'
 
 #grub

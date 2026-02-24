@@ -1,6 +1,6 @@
 -- LSP list to enable
-	-- Lua
 vim.lsp.enable({
+	-- Lua
 	"lua_ls",
 	-- Bash
 	"bashls",

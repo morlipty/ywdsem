@@ -1,40 +1,31 @@
--- Highlight text on yank
-local highlight_yank_group = vim.api.nvim_create_augroup("highlight_yank", { clear = true })
+-- General function to create group names
+local function augroup(name)
+	return vim.api.nvim_create_augroup(name, { clear = true })
+end
 
+-- Highlight text on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
-	group = highlight_yank_group,
-	pattern = "*",
-	desc = "highlight text on yank",
+	group = augroup("highlight_text_on_yank_group"),
 	callback = function()
-		vim.highlight.on_yank({ timeout = 400, visual = true })
+		vim.hl.on_yank({ timeout = 400 })
 	end,
 })
 
 -- Enable Tree-sitter
-local ts_group = vim.api.nvim_create_augroup("ts_highlighting_and_folding", { clear = true })
-
 vim.api.nvim_create_autocmd("FileType", {
-	group = ts_group,
-	desc = "Enable Tree-sitter highlighting and folding when parser is available",
+	group = augroup("treesitter_group"),
 	callback = function(args)
-		local ok = pcall(vim.treesitter.start, args.buf)
-
-		if not ok then
-			vim.opt_local.foldmethod = "manual"
-			return
+		if pcall(vim.treesitter.start, args.buf) then
+			vim.opt_local.foldlevel = 99
+			vim.wo[0][0].foldmethod = "expr"
+			vim.wo[0][0].foldexpr = "v:lua.vim.treesitter.foldexpr()"
 		end
-
-		vim.opt_local.foldlevel = 99
-		vim.opt_local.foldmethod = "expr"
-		vim.opt_local.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 	end,
 })
 
 -- Close some filetypes with q
-local close_with_q_group = vim.api.nvim_create_augroup("clear_with_q", { clear = true })
-
 vim.api.nvim_create_autocmd("FileType", {
-	group = close_with_q_group,
+	group = augroup("close_with_q_group"),
 	pattern = {
 		"notify",
 		"checkhealth",

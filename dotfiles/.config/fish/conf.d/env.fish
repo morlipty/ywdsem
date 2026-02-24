@@ -2,6 +2,8 @@ set -gx EDITOR nvim
 set -gx PAGER less
 set -gx MANPAGER "bat -l man -p"
 
+set -gx ANV_DEBUG video-decode,video-encode
+
 set -gx EZA_ICONS_AUTO always
 set -gx FZF_DEFAULT_OPTS "\
 --color=bg+:#313244,bg:#1E1E2E,spinner:#F5E0DC,hl:#F38BA8 \

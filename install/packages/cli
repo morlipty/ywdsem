@@ -15,6 +15,7 @@ strace
 zoxide
 man-db
 pkgfile
+nvme-cli
 tealdeer
 onefetch
 tailspin

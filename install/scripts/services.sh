@@ -14,6 +14,7 @@ Services=(
   "power-profiles-daemon"
   "thermald"
   "fstrim"
+  "fwupd-refresh.timer"
   "paccache.timer"
   "pkgfile-update.timer"
 )

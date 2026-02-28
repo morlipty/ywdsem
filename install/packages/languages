@@ -2,7 +2,7 @@ uv
 npm
 mise
 rustup
-jre-openjdk
+luarocks
 python-pip
 python-pipx
-luarocks
+jre-openjdk

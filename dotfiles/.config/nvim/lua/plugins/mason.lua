@@ -34,8 +34,8 @@ return {
 				"marksman",
 				-- Spell
 				"harper-ls",
-				-- Prettier
-				"prettier",
+				-- OXC
+				"oxfmt",
 			}
 
 			mr:on("package:install:success", function()

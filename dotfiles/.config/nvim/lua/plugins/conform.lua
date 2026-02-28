@@ -1,7 +1,7 @@
 return {
 	"stevearc/conform.nvim",
 
-  config = function()
+	config = function()
 		local conform = require("conform")
 		conform.setup({
 			default_format_opts = {
@@ -18,16 +18,16 @@ return {
 				bash = { "shfmt" },
 				xml = { "xmlformatter" },
 				toml = { "pyproject-fmt" },
-				json = { "prettier" },
-				jsonc = { "prettier" },
-				yaml = { "prettier" },
-				css = { "prettier" },
-				markdown = { "prettier" },
+				json = { "oxmft" },
+				jsonc = { "oxmft" },
+				yaml = { "oxmft" },
+				css = { "oxmft" },
+				markdown = { "oxmft" },
 			},
 		})
 
 		vim.keymap.set({ "n", "x" }, "<leader>f", function()
-			require("conform").format({})
+			conform.format({})
 		end, { desc = "Format file" })
 	end,
 }

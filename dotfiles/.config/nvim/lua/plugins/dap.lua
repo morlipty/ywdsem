@@ -17,19 +17,19 @@ return {
 
 			vim.fn.sign_define("DapBreakpoint", { text = "🐞" })
 
-			vim.keymap.set("n", "<F5>", function()
+			vim.keymap.set("n", "<Leader>dc", function()
 				dap.continue()
 			end, { desc = "dap continue" })
 
-			vim.keymap.set("n", "<F10>", function()
+			vim.keymap.set("n", "<Leader>dso", function()
 				dap.step_over()
 			end, { desc = "dap step over" })
 
-			vim.keymap.set("n", "<F11>", function()
+			vim.keymap.set("n", "<Leader>dsi", function()
 				dap.step_into()
 			end, { desc = "dap step into" })
 
-			vim.keymap.set("n", "<F12>", function()
+			vim.keymap.set("n", "<Leader>dsO", function()
 				dap.step_out()
 			end, { desc = "dap step out" })
 

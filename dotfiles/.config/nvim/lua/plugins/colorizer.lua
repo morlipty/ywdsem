@@ -6,8 +6,12 @@ return {
 	config = function()
 		local colorizer = require("colorizer")
 		colorizer.setup({
-			user_default_options = {
-				rgb_fn = true,
+			options = {
+				parsers = {
+					rgb = {
+						enable = true,
+					},
+				},
 			},
 		})
 	end,

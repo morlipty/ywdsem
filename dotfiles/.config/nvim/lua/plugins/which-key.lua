@@ -14,5 +14,8 @@ return {
 				{ "s", mode = { "n", "x" } },
 			},
 		})
+		vim.keymap.set("n", "<leader>?", function()
+			wk.show({ global = false })
+		end, { desc = "Buffer Local Keymaps (which-key)" })
 	end,
 }

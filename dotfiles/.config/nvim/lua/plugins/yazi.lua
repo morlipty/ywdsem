@@ -11,6 +11,6 @@ return {
 				show_help = "<f1>",
 			},
 		})
-		vim.keymap.set("n", "<leader>ty", "<CMD>Yazi<CR>", { desc = "Toggle Yazi" })
+		vim.keymap.set("n", "<leader>y", "<CMD>Yazi<CR>", { desc = "Toggle Yazi" })
 	end,
 }

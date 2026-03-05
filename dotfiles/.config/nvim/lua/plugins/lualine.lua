@@ -20,12 +20,14 @@ return {
 				lualine_a = {
 					{
 						"mode",
-						separator = { left = " " },
-						right_padding = 2,
+						separator = { left = "" },
 					},
 				},
 				lualine_c = {
-					{ "filename", path = 3 },
+					{
+						"filename",
+						path = 3,
+					},
 				},
 				lualine_x = {},
 				lualine_y = {
@@ -35,14 +37,17 @@ return {
 					},
 					{
 						"lsp_status",
-						symbols = { done = "Done" },
+						icon = "",
+						symbols = {
+							spinner = { "====", " ===", "  ==", "   =", "    ", "    ", "=   ", "==  ", "=== ", "====" },
+							done = "<OK>",
+						},
 					},
 				},
 				lualine_z = {
 					{
 						"location",
-						separator = { right = " " },
-						left_padding = 2,
+						separator = { right = "" },
 					},
 				},
 			},

@@ -28,14 +28,12 @@ return {
         'bash-language-server',
         -- XML
         'xmlformatter',
-        -- TOML
-        'pyproject-fmt',
         -- Markdown
         'marksman',
         -- Spell
         'harper-ls',
-        -- Prettier
-        'prettier',
+        -- Oxfmt
+        'oxfmt',
       }
 
       mr:on('package:install:success', function()

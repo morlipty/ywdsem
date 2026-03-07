@@ -7,12 +7,14 @@ vim.lsp.enable({
   -- Python
   'basedpyright',
   'ruff',
-  -- Spell
-  'harper_ls',
-  -- Markdown
-  'marksman',
   -- Rust
   'rust_analyzer',
+  -- Markdown
+  'marksman',
+  -- Spell
+  'harper_ls',
+  -- Oxfmt
+  'oxfmt',
 })
 
 -- Diagnostics configuration

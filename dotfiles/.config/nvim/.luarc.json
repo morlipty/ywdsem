@@ -1,9 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json",
   "runtime.version": "LuaJIT",
-  "diagnostics.globals": [
-    "vim"
-  ],
   "runtime.path": [
     "?.lua",
     "?/init.lua"
@@ -15,6 +11,7 @@
     "$HOME/.local/share/nvim/lazy/"
   ],
   "workspace.ignoreDir" : [
+    "**scripts**",
     "**tests**",
     "**spec**"
   ]

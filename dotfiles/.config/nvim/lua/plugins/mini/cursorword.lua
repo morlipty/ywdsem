@@ -1,4 +1,4 @@
 return function()
-	local cursorword = require("mini.cursorword")
-	cursorword.setup({})
+  local cursorword = require('mini.cursorword')
+  cursorword.setup({})
 end

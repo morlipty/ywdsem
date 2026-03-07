@@ -1,78 +1,68 @@
 return {
-	"saghen/blink.cmp",
+  'saghen/blink.cmp',
 
-	version = "1.*",
+  version = '1.*',
 
-	config = function()
-		local blink = require("blink.cmp")
+  config = function()
+    local blink = require('blink.cmp')
 
-		blink.setup({
-			snippets = {
-				preset = "luasnip",
-			},
+    blink.setup({
+      snippets = {
+        preset = 'luasnip',
+      },
 
-			keymap = {
-				preset = "default",
-			},
+      keymap = {
+        preset = 'default',
+      },
 
-			appearance = {
-				nerd_font_variant = "mono",
-			},
+      appearance = {
+        nerd_font_variant = 'mono',
+      },
 
-			sources = {
-				default = {
-					"lsp",
-					"path",
-					"snippets",
-					"buffer",
-				},
-				per_filetype = {
-					lua = { inherit_defaults = true, "lazydev" },
-				},
-				providers = {
-					lazydev = {
-						name = "LazyDev",
-						module = "lazydev.integrations.blink",
-						score_offset = 100,
-					},
-				},
-			},
+      sources = {
+        default = {
+          'lsp',
+          'path',
+          'snippets',
+          'buffer',
+        },
+      },
 
-			completion = {
-				menu = {
-					border = "rounded",
-					draw = {
-						treesitter = { "lsp" },
-						columns = {
-							{ "kind_icon" },
-							{ "label", "label_description", gap = 1 },
-							{ "kind" },
-							{ "source_name" },
-						},
-					},
-				},
-				documentation = {
-					window = {
-						border = "rounded",
-					},
-					auto_show = true,
-					auto_show_delay_ms = 200,
-				},
-			},
+      completion = {
+        menu = {
+          border = 'rounded',
+          draw = {
+            treesitter = { 'lsp' },
+            columns = {
+              { 'kind_icon' },
+              { 'label', 'label_description', gap = 1 },
+              { 'kind' },
+              { 'source_name' },
+            },
+          },
+        },
+        documentation = {
+          window = {
+            border = 'rounded',
+          },
+          auto_show = true,
+          auto_show_delay_ms = 200,
+        },
+      },
 
-			signature = {
-				window = {
-					border = "rounded",
-				},
-			},
+      signature = {
+        window = {
+          border = 'rounded',
+        },
+      },
 
-			cmdline = {
-				completion = {
-					menu = { auto_show = true },
-				},
-			},
+      cmdline = {
+        completion = {
+          menu = { auto_show = true },
+        },
+      },
 
-			fuzzy = { implementation = "prefer_rust_with_warning" },
-		})
-	end,
+      fuzzy = { implementation = 'prefer_rust_with_warning' },
+    })
+  end,
 }

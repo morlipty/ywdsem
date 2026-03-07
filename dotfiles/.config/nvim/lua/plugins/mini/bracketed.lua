@@ -1,4 +1,4 @@
 return function()
-	local bracketed = require("mini.bracketed")
-	bracketed.setup({})
+  local bracketed = require('mini.bracketed')
+  bracketed.setup({})
 end

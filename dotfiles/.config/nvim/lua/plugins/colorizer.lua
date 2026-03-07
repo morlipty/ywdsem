@@ -1,18 +1,18 @@
 return {
-	"catgoose/nvim-colorizer.lua",
+  'catgoose/nvim-colorizer.lua',
 
-	event = "BufReadPre",
+  event = 'BufReadPre',
 
-	config = function()
-		local colorizer = require("colorizer")
-		colorizer.setup({
-			options = {
-				parsers = {
-					rgb = {
-						enable = true,
-					},
-				},
-			},
-		})
-	end,
+  config = function()
+    local colorizer = require('colorizer')
+    colorizer.setup({
+      options = {
+        parsers = {
+          rgb = {
+            enable = true,
+          },
+        },
+      },
+    })
+  end,
 }

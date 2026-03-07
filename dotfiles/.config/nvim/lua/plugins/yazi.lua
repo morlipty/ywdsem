@@ -5,12 +5,9 @@ return {
 
   config = function()
     local yazi = require('yazi')
-    yazi.setup({
-      open_for_directories = false,
-      keymaps = {
-        show_help = '<f1>',
-      },
-    })
-    vim.keymap.set('n', '<leader>y', '<CMD>Yazi<CR>', { desc = 'Toggle Yazi' })
+    yazi.setup({})
+    vim.keymap.set('n', '<leader>y', function()
+      yazi.yazi()
+    end, { desc = 'Toggle Yazi' })
   end,
 }

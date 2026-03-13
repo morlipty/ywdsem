@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Aseprite
+Comment=Pixel Art Editor
+Exec=/home/morlipty/Applications/Aseprite/aseprite %f
+Icon=/home/morlipty/Applications/Aseprite/data/icons/ase256.png
+Categories=Graphics;
+Terminal=false

@@ -18,6 +18,7 @@ return {
       custom_highlights = function(colors)
         return {
           StatusLine = { bg = colors.none },
+          BlinkCmpMenuBorder = { bg = colors.none },
         }
       end,
       integrations = {

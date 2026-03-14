@@ -5,7 +5,7 @@ vim.lsp.enable({
   -- Bash
   'bashls',
   -- Python
-  'basedpyright',
+  'ty',
   'ruff',
   -- Rust
   'rust_analyzer',

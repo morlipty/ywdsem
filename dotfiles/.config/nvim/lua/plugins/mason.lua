@@ -17,7 +17,7 @@ return {
       local mr = require('mason-registry')
       local ensure = {
         -- Python
-        'basedpyright',
+        'ty',
         'ruff',
         -- Lua
         'lua-language-server',

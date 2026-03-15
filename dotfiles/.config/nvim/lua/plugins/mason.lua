@@ -14,41 +14,45 @@ return {
         },
       })
 
-      local mr = require('mason-registry')
-      local ensure = {
-        -- Python
-        'ty',
-        'ruff',
-        -- Lua
-        'lua-language-server',
-        'stylua',
-        -- Bash
-        'shfmt',
-        'shellcheck',
-        'bash-language-server',
-        -- XML
-        'xmlformatter',
-        -- Markdown
-        'marksman',
-        -- Oxfmt
-        'oxfmt',
-      }
+      vim.api.nvim_create_user_command('MasonInstallAll', function()
+        local installing = {}
+        local ensure = {
+          -- Python
+          'ty',
+          'ruff',
+          -- Lua
+          'lua-language-server',
+          'stylua',
+          -- Bash
+          'bash-language-server',
+          'shellcheck',
+          'shfmt',
+          -- XML
+          'xmlformatter',
+          -- Markdown
+          'marksman',
+          -- Oxfmt
+          'oxfmt',
+        }
 
-      local installing = {}
+        local mr = require('mason-registry')
 
-      mr.refresh(function()
-        for _, tool in ipairs(ensure) do
-          local pkg = mr.get_package(tool)
-          if not pkg:is_installed() then
-            table.insert(installing, tool)
-            pkg:install()
+        mr.refresh(function()
+          for _, tool in ipairs(ensure) do
+            local pkg = mr.get_package(tool)
+            if not pkg:is_installed() then
+              table.insert(installing, tool)
+              pkg:install()
+            end
           end
-        end
-      end)
+        end)
 
-      if #installing > 0 then
-        vim.notify('Installing ' .. table.concat(installing, ', '))
-      end
+        if #installing > 0 then
+          vim.notify('Installing ' .. table.concat(installing, ', '))
+        else
+          vim.notify('All Mason tools are already installed')
+        end
+      end, {})
     end,
   },
 }

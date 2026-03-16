@@ -4,8 +4,10 @@ return {
   config = function()
     local fzflua = require('fzf-lua')
     fzflua.setup({
-      'telescope',
       fzf_colors = true,
+      fzf_opts = {
+        ['--layout'] = 'default',
+      },
     })
 
     fzflua.register_ui_select()

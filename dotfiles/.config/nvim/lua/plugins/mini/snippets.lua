@@ -3,7 +3,7 @@ return function()
   local gen_loader = mini_snippets.gen_loader
   mini_snippets.setup({
     snippets = {
-      gen_loader.from_lang()
-    }
+      gen_loader.from_lang(),
+    },
   })
 end

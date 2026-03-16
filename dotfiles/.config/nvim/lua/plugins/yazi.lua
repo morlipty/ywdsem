@@ -8,6 +8,6 @@ return {
     yazi.setup({})
     vim.keymap.set('n', '<leader>y', function()
       yazi.yazi()
-    end, { desc = 'Toggle Yazi' })
+    end, { desc = 'Yazi' })
   end,
 }

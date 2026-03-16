@@ -22,23 +22,11 @@ vk.set('n', '<leader>cR', function()
   vim.lsp.codelens.refresh()
 end, { desc = 'Codelens refresh' })
 
-vk.set('n', '<leader>tdt', function()
+-- Toggle diagnostics virtual mode
+vim.keymap.set('n', '<leader>td', function()
+  local state = vim.diagnostic.config() or {}
   vim.diagnostic.config({
-    virtual_text = true,
-    virtual_lines = false,
+    virtual_text = not state.virtual_text,
+    virtual_lines = not state.virtual_lines,
   })
-end, { desc = 'Virtual text mode' })
-
-vk.set('n', '<leader>tdl', function()
-  vim.diagnostic.config({
-    virtual_text = false,
-    virtual_lines = true,
-  })
-end, { desc = 'Virtual lines mode' })
-
-vk.set('n', '<leader>tdo', function()
-  vim.diagnostic.config({
-    virtual_text = false,
-    virtual_lines = false,
-  })
-end, { desc = 'Toggle diagnostics off' })
+end, { desc = 'Toggle virtual mode' })

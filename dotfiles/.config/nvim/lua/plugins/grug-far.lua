@@ -7,7 +7,7 @@ return {
   config = function()
     local grug = require('grug-far')
     grug.setup({
-      headerMaxWidth = 80,
+      showCompactInputs = true
     })
 
     vim.keymap.set('n', '<leader>sr', function()

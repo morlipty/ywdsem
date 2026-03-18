@@ -22,6 +22,8 @@ opt.wrap = false                    -- Disable word wrapping
 opt.linebreak = true                -- Better wrapping
 opt.breakindent = true              -- Every wrapped line will continue visually indented
 
+opt.ruler = false                   -- Disable built in ruler
+
 -- Behavior
 opt.updatetime = 200                -- Faster swap file saving
 opt.timeoutlen = 300                -- Key timeout duration

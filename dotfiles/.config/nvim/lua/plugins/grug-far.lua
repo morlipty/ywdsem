@@ -1,23 +1,18 @@
 return {
   'MagicDuck/grug-far.nvim',
 
-  cmd = { 'GrugFar', 'GrugFarWithin' },
-  event = 'VeryLazy',
-
   config = function()
     local grug = require('grug-far')
     grug.setup({
-      showCompactInputs = true
+      showCompactInputs = true,
     })
 
     vim.keymap.set('n', '<leader>sr', function()
-      local ext = vim.bo.buftype == '' and vim.fn.expand('%:e')
-      grug.open({
-        transient = true,
-        prefills = {
-          filesFilter = ext and ext ~= '' and '*.' .. ext or nil,
-        },
-      })
+      grug.open({})
     end, { desc = 'Search and Replace' })
+
+    vim.keymap.set({ 'n', 'x' }, '<leader>si', function()
+      grug.open({ visualSelectionUsage = 'operate-within-range' })
+    end, { desc = 'grug-far: Search within range' })
   end,
 }

@@ -1,5 +1,8 @@
 vim.pack.add({
-  { src = 'https://github.com/Saghen/blink.cmp', version = vim.version.range('*') },
+  {
+    src = 'https://github.com/Saghen/blink.cmp',
+    version = vim.version.range('*'),
+  },
 })
 
 local blink = require('blink.cmp')

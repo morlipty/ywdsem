@@ -11,7 +11,7 @@ Services=(
   "keyd"
   "NetworkManager"
   "plasmalogin"
-  "power-profiles-daemon"
+  "tlp"
   "thermald"
   "fstrim"
   "paccache.timer"

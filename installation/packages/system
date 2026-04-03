@@ -2,4 +2,6 @@ keyd
 fwupd
 plymouth
 zram-generator
-power-profiles-daemon
+tlp
+tlp-pd
+tlp-rdw

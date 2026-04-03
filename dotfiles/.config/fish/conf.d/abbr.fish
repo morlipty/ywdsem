@@ -1,6 +1,7 @@
 #general
 abbr e 'eza -a'
 abbr el 'eza -al'
+abbr lg 'lazygit'
 
 #package manager
 abbr pkglist 'paru -Qq | fzf --style full --preview "paru -Qi {}; rg \'(installed|upgraded|removed) {} \' /var/log/pacman.log"'

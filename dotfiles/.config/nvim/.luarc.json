@@ -1,0 +1,19 @@
+{
+  "runtime.version": "LuaJIT",
+  "runtime.path": [
+    "?.lua",
+    "?/init.lua"
+  ],
+  "workspace.checkThirdParty": false,
+  "workspace.library": [
+    "$VIMRUNTIME",
+    "${3rd}/luv/library",
+    "$HOME/.local/share/nvim/site/pack/core/opt/"
+  ],
+  "workspace.ignoreDir" : [
+    "**scripts**",
+    "**tests**",
+    "**test**",
+    "**spec**"
+  ]
+}

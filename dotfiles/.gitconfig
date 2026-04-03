@@ -1,0 +1,28 @@
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[user]
+	email = morlipty@proton.me
+  name = morlipty
+
+[core]
+  pager = delta
+
+[include]
+  path = ~/.config/delta/catppuccin.gitconfig
+
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  features = catppuccin-mocha
+  navigate = true   
+  line-numbers = true
+  true-color = always
+  side-by-side = true
+
+[merge]
+  conflictStyle = zdiff3

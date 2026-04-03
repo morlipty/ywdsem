@@ -12,6 +12,7 @@ Services=(
   "NetworkManager"
   "plasmalogin"
   "tlp"
+  "tlp-pd"
   "thermald"
   "fstrim"
   "paccache.timer"

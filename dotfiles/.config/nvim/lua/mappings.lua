@@ -4,6 +4,12 @@ local vk = vim.keymap
 vk.set('n', '<C-d>', '<C-d>zz')
 vk.set('n', '<C-u>', '<C-u>zz')
 
+-- Better movement in insert mode
+vk.set('i', '<M-k>', '<Up>')
+vk.set('i', '<M-j>', '<Down>')
+vk.set('i', '<M-l>', '<Right>')
+vk.set('i', '<M-h>', '<Left>')
+
 -- Window movement
 vk.set('n', '<C-k>', '<C-w>k')
 vk.set('n', '<C-j>', '<C-w>j')

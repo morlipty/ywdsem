@@ -1,8 +1,8 @@
 #general
 abbr -a -- nv 'nvim'
 abbr -a -- lg 'lazygit'
-abbr -a --set-cursor='%' -- e 'eza -a%'
-abbr -a --set-cursor='%' -- el 'eza -al%'
+abbr -a --set-cursor='%' -- e 'eza --icons -a%'
+abbr -a --set-cursor='%' -- el 'eza --icons --header --git -al%'
 
 #package manager
 abbr -a --set-cursor='%' -- pkglist 'paru -Qq% | fzf --style full --preview "paru -Qi {}; rg \'(installed|upgraded|removed) {} \' /var/log/pacman.log"'

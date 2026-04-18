@@ -39,13 +39,12 @@ vim.api.nvim_create_autocmd({ 'VimEnter', 'ModeChanged' }, {
 })
 
 function Statusline()
-  local bufn = vim.api.nvim_win_get_buf(vim.g.statusline_winid or 0)
   return current_mode
     .. (vim.b.minidiff_summary_string or '')
     .. '%=%F %r%m%h%='
     .. vim.diagnostic.status()
-    .. (lsp[bufn] or '')
+    .. (lsp[vim.api.nvim_get_current_buf()] or '')
     .. ' %y'
 end
 
-vim.o.statusline = '%!v:lua.Statusline()'
+vim.o.statusline = '%{%v:lua.Statusline()%}'

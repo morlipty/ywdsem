@@ -14,7 +14,7 @@
       "src": "https://github.com/rafamadriz/friendly-snippets"
     },
     "fzf-lua": {
-      "rev": "8969c8c2b668502d54478e46745d6647ff346e15",
+      "rev": "beaa4e83e6be4174af291a464e4f49548c943963",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
     "grug-far.nvim": {
@@ -30,7 +30,7 @@
       "src": "https://github.com/mason-org/mason.nvim"
     },
     "mini.nvim": {
-      "rev": "418ef4930ddabe80f449c6f1323f8b6abb172d1c",
+      "rev": "d76247d6e3ffa222784be5b156770e37c665f67e",
       "src": "https://github.com/nvim-mini/mini.nvim"
     },
     "nvim": {
@@ -46,7 +46,7 @@
       "src": "https://github.com/mfussenegger/nvim-dap"
     },
     "nvim-dap-view": {
-      "rev": "03c22bb2bc0d6ed60ee6f7351f8a5e65dd2e80d3",
+      "rev": "dd43736f30ed70571a02e8c560ab69746ad7a1ed",
       "src": "https://github.com/igorlfs/nvim-dap-view"
     },
     "nvim-treesitter": {
@@ -62,7 +62,7 @@
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
     "yazi.nvim": {
-      "rev": "e7094dcfd897600e02a23e8334cdfeb9ee07dc17",
+      "rev": "49b3417e4bc2002ce8003f8fca275fea1d710d50",
       "src": "https://github.com/mikavilpas/yazi.nvim"
     }
   }

@@ -6,7 +6,7 @@
       "version": ">=0.0.0"
     },
     "conform.nvim": {
-      "rev": "086a40dc7ed8242c03be9f47fbcee68699cc2395",
+      "rev": "dca1a190aa85f9065979ef35802fb77131911106",
       "src": "https://github.com/stevearc/conform.nvim"
     },
     "friendly-snippets": {
@@ -14,7 +14,7 @@
       "src": "https://github.com/rafamadriz/friendly-snippets"
     },
     "fzf-lua": {
-      "rev": "8223eb24a7adf72c4b24e04b751486b492775414",
+      "rev": "f233cb2f4cf0bc56ae2b10d06f25345069fcf355",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
     "grug-far.nvim": {

@@ -1,0 +1,13 @@
+base
+base-devel
+linux
+linux-firmware
+grub
+efibootmgr
+keyd
+fwupd
+plymouth
+zram-generator
+tlp
+tlp-pd
+ethtool

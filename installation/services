@@ -1,0 +1,11 @@
+bluetooth
+dnscrypt-proxy
+firewalld
+keyd
+NetworkManager
+plasmalogin
+thermald
+tlp-pd
+tlp
+fstrim.timer
+paccache.timer

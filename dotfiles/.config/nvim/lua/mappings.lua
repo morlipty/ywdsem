@@ -23,7 +23,7 @@ vk.set('n', '<C-Right>', '<C-w>>')
 vk.set('n', '<C-Left>', '<C-w><')
 
 -- Clear highlighting
-vk.set('n', '<leader>/', '<cmd>noh<CR>', { desc = 'Clear highlighting' })
+vk.set('n', '<leader>/', vim.cmd.noh, { desc = 'Clear highlighting' })
 
 -- Toggle wrapping
 vk.set('n', '<leader>tw', function()

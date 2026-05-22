@@ -13,6 +13,8 @@ vim.lsp.enable({
   'marksman',
   -- Oxfmt
   'oxfmt',
+  -- Github actions
+  'gh_actions_ls'
 })
 
 -- Diagnostics configuration

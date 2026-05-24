@@ -1,5 +1,7 @@
 function fish_greeting
-  fastfetch --config examples/13
+  if test "$KITTY_WINDOW_ID" = 1 
+    fastfetch --config examples/13
+  end
 end
 
 function fish_user_key_bindings

@@ -5,6 +5,7 @@ bat
 unrar
 aria2
 man-db
+strace
 nvme-cli
 tealdeer
 tailspin

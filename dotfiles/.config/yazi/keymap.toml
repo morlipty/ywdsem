@@ -1,19 +1,24 @@
 [[mgr.prepend_keymap]]
-on   = "<Enter>"
-run  = "plugin smart-enter"
+on = "<Enter>"
+run = "plugin smart-enter"
 desc = "Enter the child directory, or open the file"
 
 [[mgr.prepend_keymap]]
-on = [ "g", "t" ]
+on = ["g", "t"]
 run = "cd ~/.local/share/Trash/files/"
 desc = "Go Trash"
 
 [[mgr.prepend_keymap]]
-on = [ "g", "D" ]
+on = ["g", "D"]
 run = "cd ~/Documents/"
 desc = "Go ~/Documents"
 
 [[mgr.prepend_keymap]]
-on = [ "g", "y" ]
+on = ["g", "y"]
 run = "cd ~/ywdsem/"
 desc = "Go ywdsem"
+
+[[mgr.prepend_keymap]]
+on = ["g", "r"]
+run = 'shell -- ya emit cd "$(git rev-parse --show-toplevel)"'
+desc = "Root of the current Git repository"

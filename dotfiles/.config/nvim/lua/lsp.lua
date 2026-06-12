@@ -33,5 +33,4 @@ vim.diagnostic.config({
   severity_sort = true,
   float = { source = true },
   signs = { text = signs },
-  status = { format = signs },
 })

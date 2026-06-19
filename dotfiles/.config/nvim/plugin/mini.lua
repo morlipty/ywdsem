@@ -18,7 +18,7 @@ require('mini.hipatterns').setup({
       extmark_opts = {
         priority = 204,
         sign_text = ' ',
-        sign_hl_group = 'DiagnosticError',
+        sign_hl_group = 'DiagnosticSignError',
       },
     },
     hack = {
@@ -27,7 +27,7 @@ require('mini.hipatterns').setup({
       extmark_opts = {
         priority = 203,
         sign_text = ' ',
-        sign_hl_group = 'DiagnosticWarn',
+        sign_hl_group = 'DiagnosticSignWarn',
       },
     },
     todo = {
@@ -36,7 +36,7 @@ require('mini.hipatterns').setup({
       extmark_opts = {
         priority = 202,
         sign_text = ' ',
-        sign_hl_group = 'DiagnosticInfo',
+        sign_hl_group = 'DiagnosticSignInfo',
       },
     },
     note = {
@@ -45,7 +45,7 @@ require('mini.hipatterns').setup({
       extmark_opts = {
         priority = 201,
         sign_text = ' ',
-        sign_hl_group = 'DiagnosticHint',
+        sign_hl_group = 'DiagnosticSignHint',
       },
     },
   },

@@ -9,6 +9,7 @@ vim.o.signcolumn = 'yes'
 vim.o.cursorline = true
 
 vim.o.winborder = 'rounded'
+vim.o.pumborder = 'rounded'
 
 vim.o.foldlevel = 10
 vim.o.laststatus = 3

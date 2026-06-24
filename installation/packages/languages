@@ -2,3 +2,4 @@ uv
 npm
 rustup
 luarocks
+jdk21-openjdk

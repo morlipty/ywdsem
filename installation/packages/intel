@@ -4,6 +4,3 @@ thermald
 libvpl
 vpl-gpu-rt
 vulkan-intel
-intel-gpu-tools
-libva-utils
-intel-compute-runtime

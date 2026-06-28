@@ -2,8 +2,6 @@ base
 base-devel
 linux
 linux-firmware
-grub
-efibootmgr
 keyd
 fwupd
 plymouth

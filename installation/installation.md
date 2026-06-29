@@ -3,54 +3,69 @@
 Connect to Wifi
 
 ```sh
-iwctl device list
-iwctl station 'NAME' scan     # e.g. wlan0
-iwctl station 'NAME' connect 'SSID'
+iwctl station wlan0 scan
+iwctl station wlan0 connect 'SSID'
+```
+
+Format disk
+
+```sh
+nvme format -s 1 -n 1 /dev/nvme0
 ```
 
 Partition disk
 
 ```sh
-fdisk -l
-fdisk /dev/DEVICE        # e.g. /dev/nvme0n1
-#  - create EFI partition: /dev/DEVICEp1
-#  - create BOOT partition: /dev/DEVICEp2
-#  - create ROOT partition: /dev/DEVICEp3
+fdisk /dev/nvme0n1
+# - create GPT table by pressing "g"
+# - create EFI partition: /dev/nvme0n1p1
+# - change EFI partition type to uefi
+# - create ROOT partition: /dev/nvme0n1p2
 ```
 
 ---
 
 ## 1. LUKS setup
 
+Encrypt the LUKS partition
+
 ```sh
-# Encrypt the LUKS partition
-cryptsetup luksFormat /dev/DEVICEp3
+cryptsetup luksFormat /dev/nvme0n1p2
+```
 
-# Open it as /dev/mapper/root and allow discards
-cryptsetup --allow-discards --persistent open /dev/DEVICEp3 root
+Open it as root and allow discards
 
-# Check
-cryptsetup luksDump /dev/DEVICEp3 | grep Flags
+```sh
+cryptsetup --allow-discards --persistent open /dev/nvme0n1p2 root
+```
+
+Check
+
+```sh
+cryptsetup luksDump /dev/nvme0n1p2
 ```
 
 ---
 
 ## 2. Filesystems & mount
 
+Create filesystems
+
 ```sh
-# Filesystems
-mkfs.fat -F 32 /dev/DEVICEp1       # EFI partition
-mkfs.ext4 /dev/DEVICEp2
+mkfs.fat -F 32 /dev/nvme0n1p1
 mkfs.ext4 /dev/mapper/root
+```
 
-# Mount root
+Mount root and EFI
+
+```sh
 mount --mkdir /dev/mapper/root /mnt
+mount --mkdir /dev/nvme0n1p1 /mnt/efi
+```
 
-# Mount EFI & boot
-mount --mkdir /dev/DEVICEp1 /mnt/efi
-mount --mkdir /dev/DEVICEp2 /mnt/boot
+Check layout just in case
 
-# Check layout just in case
+```sh
 lsblk
 ```
 
@@ -58,14 +73,19 @@ lsblk
 
 ## 3. Base system install
 
+Basic installation
+
 ```sh
 pacstrap -K /mnt \
   base base-devel plymouth \
   linux linux-firmware sof-firmware intel-ucode \
   networkmanager iwd dnscrypt-proxy wireless-regdb \
   neovim zram-generator yazi
+```
 
-# Generate fstab
+Generate fstab
+
+```sh
 genfstab -U /mnt >> /mnt/etc/fstab
 ```
 
@@ -73,98 +93,111 @@ genfstab -U /mnt >> /mnt/etc/fstab
 
 ## 4. Chroot & basic config
 
+Chroot into configuration
+
 ```sh
 arch-chroot /mnt
+```
 
-# Timezone
+Change permissions for efi system
+
+```sh
+# /etc/fstab
+0022 => 0077 for permissions
+```
+
+Time configs
+
+```sh
 ln -sf /usr/share/zoneinfo/Asia/Yerevan /etc/localtime
 hwclock --systohc
+```
 
-# (Before this: edit /etc/locale.gen and uncomment needed locales)
+Edit /etc/locale.gen and uncomment needed locales
+
+```sh
 locale-gen
+```
 
-# Hostname
+Set hostname
+
+```sh
 echo archlinux > /etc/hostname
+```
+
+Set wireless-regdb
+
+```sh
+# /etc/conf.d/wireless-regdom
+WIRELESS_REGDOM="AM"
 ```
 
 ---
 
 ## 5. Root and User
 
-```sh
-# Root password
-passwd
+Set root password
 
-# Create user (wheel = sudo group)
+```sh
+passwd
+```
+
+Create user and add it to wheel group
+
+```sh
 useradd -m -G wheel USERNAME
 passwd USERNAME
+```
 
-# Enable sudo for wheel
+Enable sudo for wheel
+
+```sh
 EDITOR=nvim visudo /etc/sudoers.d/10-wheel
-# and add
+# - and add
 %wheel ALL=(ALL:ALL) ALL
 ```
 
 ---
 
-## 6. mkinitcpio
+## 6. mkinitcpio and UKI
+
+Copy UUID of the LUKS partition (/dev/nvme0n1p2)
 
 ```sh
-# Add hooks to /etc/mkinitcpio.conf, before filesystems
-"plymouth sd-encrypt"
+blkid > /home/$HOME/blkid
+```
 
-# Recreate mkinitcpio
+Add kernel parameters for UKI
+
+```sh
+# /etc/cmdline.d/root.conf
+rd.luks.name=device-UUID=root root=/dev/mapper/root \
+    rw quiet splash sysrq_always_enabled=1
+```
+
+Enable UKI generation in mkinitcpio and uncomment image generation
+
+```sh
+# /etc/mkinitcpio.d/linux.preset
+default_uki="/efi/EFI/BOOT/BOOTX64.EFI"
+```
+
+Add hooks to mkinitcpio, before filesystems
+
+```sh
+# /etc/mkinitcpio.conf
+"plymouth sd-encrypt"
+```
+
+Recreate mkinitcpio
+
+```sh
 mkinitcpio -P
 ```
 
 ---
 
-## 7. Bootloader
-
-```sh
-# Install GRUB for UEFI
-pacman -S grub efibootmgr
-
-grub-install \
-  --efi-directory=/efi \
-  --boot-directory=/boot \
-  --removable
-```
-
-## 8. GRUB config
-
-```sh
-blkid
-```
-
-Copy UUID of the LUKS partition (/dev/DEVICEp2)
-
-Add to /etc/default/grub in GRUB_CMDLINE_LINUX (single line)
-
-```sh
-rd.luks.name=device-UUID=root root=/dev/mapper/root
-```
-
-Also add to GRUB_CMDLINE_LINUX_DEFUALT
-
-```sh
-splash sysrq_always_enabled=1
-```
-
-And add
-
-```sh
-GRUB_DEFAULT=saved
-GRUB_SAVEDEFAULT=true
-```
-
-Generate grub config
-
-```sh
-grub-mkconfig -o /boot/grub/grub.cfg
-```
-
-Exit & unmount
+## 7. Finish
 
 ```sh
 exit

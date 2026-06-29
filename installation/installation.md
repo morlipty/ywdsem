@@ -59,7 +59,7 @@ mkfs.ext4 /dev/mapper/root
 Mount root and EFI
 
 ```sh
-mount --mkdir /dev/mapper/root /mnt
+mount -o umask=0077 --mkdir /dev/mapper/root /mnt
 mount --mkdir /dev/nvme0n1p1 /mnt/efi
 ```
 
@@ -97,13 +97,6 @@ Chroot into configuration
 
 ```sh
 arch-chroot /mnt
-```
-
-Restrict access to the ESP
-
-```sh
-# /etc/fstab
-0022 => 0077 for permissions
 ```
 
 Time configs

@@ -81,7 +81,8 @@ Install and enable keyd
 
 ```sh
 sudo pacman -Syu keyd
-sudo systemctl enable --now keyd
+
+systemctl enable --now keyd
 ```
 
 Configuration

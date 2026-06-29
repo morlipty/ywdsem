@@ -99,7 +99,7 @@ Chroot into configuration
 arch-chroot /mnt
 ```
 
-Change permissions for efi system
+Restrict access to the ESP
 
 ```sh
 # /etc/fstab
@@ -161,10 +161,16 @@ EDITOR=nvim visudo /etc/sudoers.d/10-wheel
 
 ## 6. mkinitcpio and UKI
 
+Create kernel parameters folder
+
+```sh
+mkdir -p /etc/conf.d/
+```
+
 Copy UUID of the LUKS partition (/dev/nvme0n1p2)
 
 ```sh
-blkid > /home/$HOME/blkid
+blkid -s UUID -o value /dev/nvme0n1p2 > /etc/cmdline.d/root.conf
 ```
 
 Add kernel parameters for UKI

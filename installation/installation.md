@@ -59,8 +59,8 @@ mkfs.ext4 /dev/mapper/root
 Mount root and EFI
 
 ```sh
-mount -o umask=0077 --mkdir /dev/mapper/root /mnt
-mount --mkdir /dev/nvme0n1p1 /mnt/efi
+mount --mkdir /dev/mapper/root /mnt
+mount -o umask=0077 --mkdir /dev/nvme0n1p1 /mnt/efi
 ```
 
 Check layout just in case
@@ -154,10 +154,11 @@ EDITOR=nvim visudo /etc/sudoers.d/10-wheel
 
 ## 6. mkinitcpio and UKI
 
-Create kernel parameters folder
+Create needed directiories
 
 ```sh
-mkdir -p /etc/conf.d/
+mkdir -p /etc/cmdline.d/
+mkdir -p /etc/EFI/BOOT
 ```
 
 Copy UUID of the LUKS partition (/dev/nvme0n1p2)

@@ -1,10 +1,9 @@
-## 0. dnscrypt and iwd configuration
+## 0. Network configuration
 
 Fallback to dnscrypt
 
 ```sh
-#/etc/resolv.conf
-
+# /etc/resolv.conf
 nameserver 127.0.0.1
 options edns0
 ```
@@ -15,58 +14,60 @@ And make resolv.conf immutable
 sudo chattr +i /etc/resolv.conf
 ```
 
-Diable wifi power saving
+Make iwd as wifi backend
 
 ```sh
-#/etc/iwd/main.conf
-
-[DriverQuirks]
-PowerSaveDisable=*
-```
-
-Make iwd wifi backend
-
-```sh
-#/etc/NetworkManager/conf.d/wifi_backend.conf
-
+# /etc/NetworkManager/conf.d/wifi_backend.conf
 [device]
 wifi.backend=iwd
 ```
 
-Add quad9 server name to dnscrypt-proxy config
+Add cloudflare to dnscrypt-proxy config
 
 ```sh
-#/etc/dnscrypt-proxy/dnscrypt-proxy.toml
+# /etc/dnscrypt-proxy/dnscrypt-proxy.toml
+server_names = ['cloudflare']
+```
 
-server_names = ['quad9-dnscrypt-ip4-filter-pri']
+Mask wpa_supplicant
+
+```sh
+systemctl mask wpa_supplicant
+```
+
+Enable NetworkManager and dnscrypt-proxy
+
+```sh
+systemctl enable NetworkManager dnscrypt-proxy
 ```
 
 ---
 
 ## 1. ZRAM setup
 
-```sh
+Create zram-generator config
 
-#/etc/systemd/zram-generator.conf
+```sh
+# /etc/systemd/zram-generator.conf
 [zram0]
 zram-size = ram / 2
-compression-algorithm = zstd
 ```
 
+Reload daemon and start zram service
+
 ```sh
-sudo systemctl daemon-reload
-sudo systemctl start systemd-zram-setup@zram0.service
+systemctl daemon-reload
+systemctl start systemd-zram-setup@zram0.service
 ```
 
 ---
 
 ## 2. pacman
 
-Uncomment and add
+Uncomment and add in pacman
 
 ```sh
-#/etc/pacman.conf
-
+# /etc/pacman.conf
 Color
 VerbosePkgLists
 ILoveCandy
@@ -76,14 +77,17 @@ ILoveCandy
 
 ## 3. keyd
 
+Install and enable keyd
+
 ```sh
 sudo pacman -Syu keyd
 sudo systemctl enable --now keyd
 ```
 
-```sh
-#/etc/keyd/default.conf
+Configuration
 
+```sh
+# /etc/keyd/default.conf
 [ids]
 
 *
@@ -91,6 +95,28 @@ sudo systemctl enable --now keyd
 [main]
 
 capslock = overload(control, esc)
+```
 
-esc = capslock
+```sh
+sudo keyd reload
+```
+
+---
+
+## 4. Git and yay
+
+Install git and clone dotfiles
+
+```sh
+sudo pacman -Syu git
+
+git clone --recurse-submodules https://github.com/morlipty/ywdsem.git
+```
+
+Install yay
+
+```sh
+git clone https://aur.archlinux.org/yay-bin.git
+cd yay-bin
+makepkg -si
 ```

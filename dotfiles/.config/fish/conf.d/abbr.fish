@@ -8,7 +8,3 @@ abbr -a --set-cursor='%' -- el 'eza --icons --header --git -al%'
 abbr -a --set-cursor='%' -- pkglist 'pacman -Qq% | fzf --style full --preview "pacman -Qi {}"'
 abbr -a -- pkghist 'tspin /var/log/pacman.log | rg "(installed|removed|upgraded)" | tac | fzf --ansi --no-sort'
 abbr -a -- pacunlock 'sudo rm -i /var/lib/pacman/db.lck'
-
-#grub
-abbr -a -- grub-update 'sudo grub-mkconfig -o /boot/grub/grub.cfg'
-abbr -a -- grub-ebr 'sudo grub-install --efi-directory=/efi --boot-directory=/boot --removable'

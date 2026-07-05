@@ -2,4 +2,4 @@ gui:
   nerdFontsVersion: "3"
 git:
   pagers:
-    - pager: delta --paging=never --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}" --file-style="omit"
+    - pager: delta --paging=never

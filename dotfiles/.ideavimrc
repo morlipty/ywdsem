@@ -1,0 +1,11 @@
+set scrolloff=5
+set incsearch
+set clipboard+=unnamedplus
+set relativenumber
+
+set mini-ai
+
+map Q gq
+
+Plug 'machakann/vim-highlightedyank'
+Plug 'tpope/vim-commentary'

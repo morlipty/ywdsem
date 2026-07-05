@@ -1,0 +1,7 @@
+iwd
+networkmanager
+wireless-regdb
+dnscrypt-proxy
+bluez
+bluez-utils
+firewalld

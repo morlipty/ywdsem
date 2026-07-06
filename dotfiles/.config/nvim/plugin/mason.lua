@@ -18,6 +18,7 @@ vim.api.nvim_create_user_command('MasonInstallAll', function()
     -- python
     'ty',
     'ruff',
+    'basedpyright',
     -- lua
     'lua-language-server',
     'stylua',
@@ -30,7 +31,7 @@ vim.api.nvim_create_user_command('MasonInstallAll', function()
     -- oxfmt
     'oxfmt',
     -- fish
-    'fish-lsp'
+    'fish-lsp',
   }
 
   local mr = require('mason-registry')

@@ -8,6 +8,8 @@ vim.o.relativenumber = true
 vim.o.signcolumn = 'yes'
 vim.o.cursorline = true
 vim.o.fillchars = 'eob: '
+vim.o.list = true
+vim.o.listchars = 'extends:…,precedes:…'
 
 vim.o.winborder = 'rounded'
 vim.o.pumborder = 'rounded'
@@ -22,6 +24,7 @@ vim.o.smoothscroll = true
 vim.o.wrap = false
 vim.o.linebreak = true
 vim.o.breakindent = true
+vim.o.breakindentopt = 'list:-1'
 
 vim.o.showmode = false
 vim.o.ruler = false

@@ -125,6 +125,14 @@ Set wireless-regdb
 WIRELESS_REGDOM="AM"
 ```
 
+Disable hardware watchdog
+
+```sh
+# /etc/modprobe.d/watchdog.conf
+blacklist iTCO_wdt
+blacklist intel_oc_wdt
+```
+
 ---
 
 ## 5. Root and User
@@ -172,7 +180,7 @@ Add kernel parameters for UKI
 ```sh
 # /etc/cmdline.d/root.conf
 rd.luks.name=device-UUID=root root=/dev/mapper/root \
-    rw quiet splash sysrq_always_enabled=1
+    rw quiet splash sysrq_always_enabled=1 nowatchdog
 ```
 
 Enable UKI generation in mkinitcpio and uncomment image generation

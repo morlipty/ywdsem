@@ -1,60 +1,63 @@
+local o = vim.o
+local g = vim.g
+
 -- Leader keys
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+g.mapleader = ' '
+g.maplocalleader = ' '
 
 -- Visual
-vim.o.number = true
-vim.o.relativenumber = true
-vim.o.signcolumn = 'yes'
-vim.o.cursorline = true
-vim.o.fillchars = 'eob: '
-vim.o.list = true
-vim.o.listchars = 'extends:…,precedes:…'
+o.number = true
+o.relativenumber = true
+o.signcolumn = 'yes'
+o.cursorline = true
+o.fillchars = 'eob: '
+o.list = true
+o.listchars = 'extends:…,precedes:…'
 
-vim.o.winborder = 'rounded'
-vim.o.pumborder = 'rounded'
+o.winborder = 'rounded'
+o.pumborder = 'rounded'
 
-vim.o.foldlevel = 10
-vim.o.laststatus = 3
+o.foldlevel = 10
+o.laststatus = 3
 
-vim.o.scrolloff = 8
-vim.o.sidescrolloff = 8
-vim.o.smoothscroll = true
+o.scrolloff = 8
+o.sidescrolloff = 8
+o.smoothscroll = true
 
-vim.o.wrap = false
-vim.o.linebreak = true
-vim.o.breakindent = true
-vim.o.breakindentopt = 'list:-1'
+o.wrap = false
+o.linebreak = true
+o.breakindent = true
+o.breakindentopt = 'list:-1'
 
-vim.o.showmode = false
-vim.o.ruler = false
+o.showmode = false
+o.ruler = false
 
 -- Behavior
-vim.o.updatetime = 200
+o.updatetime = 200
 
-vim.o.confirm = true
-vim.o.undofile = true
+o.confirm = true
+o.undofile = true
 
-vim.o.tabstop = 2
-vim.o.expandtab = true
-vim.o.shiftwidth = 2
-vim.o.shiftround = true
-vim.o.smartindent = true
+o.tabstop = 2
+o.expandtab = true
+o.shiftwidth = 2
+o.shiftround = true
+o.smartindent = true
 
-vim.o.smartcase = true
-vim.o.ignorecase = true
+o.smartcase = true
+o.ignorecase = true
 
-vim.o.jumpoptions = 'view'
-vim.o.splitkeep = 'screen'
-vim.o.splitbelow = true
-vim.o.splitright = true
+o.jumpoptions = 'view'
+o.splitkeep = 'screen'
+o.splitbelow = true
+o.splitright = true
 
-vim.o.virtualedit = 'block'
+o.virtualedit = 'block'
 
-vim.o.clipboard = 'unnamedplus'
+o.clipboard = 'unnamedplus'
 
 -- Disable built in providers
-vim.g.loaded_python3_provider = 0
-vim.g.loaded_ruby_provider = 0
-vim.g.loaded_perl_provider = 0
-vim.g.loaded_node_provider = 0
+g.loaded_python3_provider = 0
+g.loaded_ruby_provider = 0
+g.loaded_perl_provider = 0
+g.loaded_node_provider = 0

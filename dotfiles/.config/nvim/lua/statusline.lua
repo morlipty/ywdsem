@@ -1,8 +1,12 @@
+local api = vim.api
+
 local lsp = {}
-vim.api.nvim_create_autocmd({ 'LspAttach', 'LspDetach' }, {
-  callback = vim.schedule_wrap(function(args)
-    local buf = args.buf
+
+api.nvim_create_autocmd({ 'LspAttach', 'LspDetach' }, {
+  callback = vim.schedule_wrap(function(ev)
+    local buf = ev.buf
     local clients = vim.lsp.get_clients({ bufnr = buf })
+
     if #clients > 0 then
       local names = {}
       for i = 1, #clients do
@@ -12,12 +16,14 @@ vim.api.nvim_create_autocmd({ 'LspAttach', 'LspDetach' }, {
     else
       lsp[buf] = nil
     end
+
+    api.nvim__redraw({ statusline = true })
   end),
 })
 
-vim.api.nvim_create_autocmd({ 'BufDelete', 'BufWipeout' }, {
-  callback = function(args)
-    lsp[args.buf] = nil
+api.nvim_create_autocmd({ 'BufDelete', 'BufWipeout' }, {
+  callback = function(ev)
+    lsp[ev.buf] = nil
   end,
 })
 
@@ -38,12 +44,13 @@ local modes = {
 }
 
 function Statusline()
-  local m = vim.api.nvim_get_mode().mode
+  local m = api.nvim_get_mode().mode
+
   return (modes[m] or m)
     .. (vim.b.minidiff_summary_string or '')
     .. '%=%F %r%m%h%='
     .. vim.diagnostic.status()
-    .. (lsp[vim.api.nvim_get_current_buf()] or '')
+    .. (lsp[api.nvim_get_current_buf()] or '')
     .. '%y'
 end
 

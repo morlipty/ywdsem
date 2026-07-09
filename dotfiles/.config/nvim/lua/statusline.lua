@@ -1,6 +1,5 @@
 local api = vim.api
-
-local lsp = {}
+local b = vim.b
 
 api.nvim_create_autocmd({ 'LspAttach', 'LspDetach' }, {
   callback = vim.schedule_wrap(function(ev)
@@ -12,46 +11,57 @@ api.nvim_create_autocmd({ 'LspAttach', 'LspDetach' }, {
       for i = 1, #clients do
         names[i] = clients[i].name
       end
-      lsp[buf] = ' ' .. table.concat(names, ' ') .. ' '
+      b[buf].lsp_clients = table.concat(names, ' ')
     else
-      lsp[buf] = nil
+      b[buf].lsp_clients = nil
     end
 
-    api.nvim__redraw({ statusline = true })
+    vim.cmd('redrawstatus')
   end),
 })
 
-api.nvim_create_autocmd({ 'BufDelete', 'BufWipeout' }, {
-  callback = function(ev)
-    lsp[ev.buf] = nil
-  end,
-})
-
+-- stylua: ignore start
+local function mode(name, hl)
+  return table.concat({
+    '%#Stl' , hl , 'Inv#',
+    '',
+    '%#Stl' , hl , '#', name,
+    '%#Stl' , hl , 'Inv#',
+    '',
+    '%* '})
+end
 local modes = {
-  ['n'] = '| NORMAL | ',
-  ['v'] = '| VISUAL | ',
-  ['V'] = '| V-LINE | ',
-  ['\22'] = '| V-BLOCK | ',
-  ['s'] = '| SELECT | ',
-  ['S'] = '| S-LINE | ',
-  ['\19'] = '| S-BLOCK | ',
-  ['i'] = '| INSERT | ',
-  ['R'] = '| REPLACE | ',
-  ['c'] = '| COMMAND | ',
-  ['r'] = '| PROMPT | ',
-  ['!'] = '| SHELL | ',
-  ['t'] = '| TERMINAL | ',
+  ['n']   = mode('NORMAL', 'Normal'),
+  ['v']   = mode('VISUAL', 'Visual'),
+  ['V']   = mode('V-LINE', 'Visual'),
+  ['\22'] = mode('V-BLCK', 'Visual'),
+  ['s']   = mode('SELECT', 'Visual'),
+  ['S']   = mode('S-LINE', 'Visual'),
+  ['\19'] = mode('S-BLCK', 'Visual'),
+  ['i']   = mode('INSERT', 'Insert'),
+  ['R']   = mode('REPLCE', 'Replace'),
+  ['c']   = mode('CMDLIN', 'Command'),
+  ['r']   = mode('PROMPT', 'Command'),
+  ['!']   = mode('  SH  ', 'Command'),
+  ['t']   = mode(' TERM ', 'Terminal'),
 }
+-- stylua: ignore end
 
 function Statusline()
   local m = api.nvim_get_mode().mode
+  local mode_str = modes[m] or m
 
-  return (modes[m] or m)
-    .. (vim.b.minidiff_summary_string or '')
-    .. '%=%F %r%m%h%='
-    .. vim.diagnostic.status()
-    .. (lsp[api.nvim_get_current_buf()] or '')
-    .. '%y'
+  local parts = {
+    mode_str,
+    b.minidiff_summary_string or '',
+    '%=%<%F %r%m%h%=',
+    vim.diagnostic.status(),
+    ' ',
+    b.lsp_clients or '',
+    ' %y',
+  }
+
+  return table.concat(parts)
 end
 
 vim.o.statusline = '%{%v:lua.Statusline()%}'

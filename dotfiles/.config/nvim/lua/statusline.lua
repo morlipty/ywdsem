@@ -4,6 +4,11 @@ local b = vim.b
 api.nvim_create_autocmd({ 'LspAttach', 'LspDetach' }, {
   callback = vim.schedule_wrap(function(ev)
     local buf = ev.buf
+
+    if not api.nvim_buf_is_valid(buf) then
+      return
+    end
+
     local clients = vim.lsp.get_clients({ bufnr = buf })
 
     if #clients > 0 then
@@ -25,7 +30,7 @@ local function mode(name, hl)
   return table.concat({
     '%#Stl', hl, 'Inv#',
     '%#Stl', hl, '#', name,
-    '%#Stl', hl, 'Inv# ',
+    '%#Stl', hl, 'Inv#%* ',
     })
 end
 local modes = {

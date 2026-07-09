@@ -11,7 +11,7 @@ api.nvim_create_autocmd({ 'LspAttach', 'LspDetach' }, {
       for i = 1, #clients do
         names[i] = clients[i].name
       end
-      b[buf].lsp_clients = table.concat(names, ' ')
+      b[buf].lsp_clients = ' ' .. table.concat(names, ' ') .. ' '
     else
       b[buf].lsp_clients = nil
     end
@@ -53,9 +53,8 @@ function Statusline()
     b.minidiff_summary_string or '',
     '%=%<%F %r%m%h%=',
     vim.diagnostic.status(),
-    ' ',
     b.lsp_clients or '',
-    ' %y',
+    '%y',
   })
 end
 

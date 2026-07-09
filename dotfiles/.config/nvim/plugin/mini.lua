@@ -101,8 +101,12 @@ vim.keymap.set('n', '<leader>md', function()
   MiniSessions.select('delete')
 end, { desc = 'Delete session' })
 
-require('mini.snippets').setup()
-MiniSnippets.gen_loader.from_lang()
+local mini_snippets = require('mini.snippets')
+mini_snippets.setup({
+  snippets = {
+    mini_snippets.gen_loader.from_lang(),
+  },
+})
 
 require('mini.splitjoin').setup()
 

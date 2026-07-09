@@ -23,12 +23,10 @@ api.nvim_create_autocmd({ 'LspAttach', 'LspDetach' }, {
 -- stylua: ignore start
 local function mode(name, hl)
   return table.concat({
-    '%#Stl' , hl , 'Inv#',
-    '',
-    '%#Stl' , hl , '#', name,
-    '%#Stl' , hl , 'Inv#',
-    '',
-    '%* '})
+    '%#Stl', hl, 'Inv#',
+    '%#Stl', hl, '#', name,
+    '%#Stl', hl, 'Inv# ',
+    })
 end
 local modes = {
   ['n']   = mode('NORMAL', 'Normal'),

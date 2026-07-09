@@ -50,7 +50,7 @@ local modes = {
 function Statusline()
   local m = api.nvim_get_mode().mode
 
-  local parts = {
+  return table.concat({
     modes[m] or m,
     b.minidiff_summary_string or '',
     '%=%<%F %r%m%h%=',
@@ -58,9 +58,7 @@ function Statusline()
     ' ',
     b.lsp_clients or '',
     ' %y',
-  }
-
-  return table.concat(parts)
+  })
 end
 
 vim.o.statusline = '%{%v:lua.Statusline()%}'

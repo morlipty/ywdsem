@@ -1,5 +1,7 @@
 vim.pack.add({ 'https://github.com/ibhagwan/fzf-lua' })
 
+local vk = vim.keymap
+
 local fzflua = require('fzf-lua')
 
 fzflua.setup({
@@ -10,42 +12,42 @@ fzflua.setup({
   ui_select = {},
 })
 
-vim.keymap.set('n', '\\\\', function()
+vk.set('n', '\\\\', function()
   fzflua.builtin()
 end, { desc = 'Search' })
 
-vim.keymap.set('n', '\\b', function()
+vk.set('n', '\\b', function()
   fzflua.buffers()
 end, { desc = 'Buffers' })
 
-vim.keymap.set('n', '\\f', function()
+vk.set('n', '\\f', function()
   fzflua.files()
 end, { desc = 'Files' })
 
-vim.keymap.set('n', '\\d', function()
+vk.set('n', '\\d', function()
   fzflua.diagnostics_document()
 end, { desc = 'Documents Diagnostics' })
 
-vim.keymap.set('n', '\\D', function()
+vk.set('n', '\\D', function()
   fzflua.diagnostics_workspace()
 end, { desc = 'Workspace Diagnostics' })
 
-vim.keymap.set('n', '\\l', function()
+vk.set('n', '\\l', function()
   fzflua.live_grep()
 end, { desc = 'Live grep search' })
 
-vim.keymap.set('n', '\\c', function()
+vk.set('n', '\\c', function()
   fzflua.grep_curbuf()
 end, { desc = 'Current buf grep search' })
 
-vim.keymap.set('n', '\\s', function()
+vk.set('n', '\\s', function()
   fzflua.spell_suggest()
 end, { desc = 'Spell suggest' })
 
-vim.keymap.set('n', '\\t', function()
+vk.set('n', '\\t', function()
   fzflua.grep({
     search = '\\[(TODO|FIXME|HACK|NOTE)\\]',
-    cmd = "rg --color=always --smart-case",
+    cmd = 'rg --color=always --smart-case',
     no_esc = true,
   })
 end, { desc = 'Search for TODOS etc' })

@@ -1,5 +1,7 @@
 vim.pack.add({ 'https://github.com/nvim-mini/mini.nvim' })
 
+local vk = vim.keymap
+
 require('mini.ai').setup()
 
 require('mini.align').setup()
@@ -77,12 +79,12 @@ require('mini.move').setup({
 })
 
 require('mini.notify').setup()
-vim.keymap.set('n', '<leader>mh', function()
+vk.set('n', '<leader>mh', function()
   MiniNotify.show_history()
 end, { desc = 'Notifications history' })
 
 require('mini.sessions').setup()
-vim.keymap.set('n', '<leader>mn', function()
+vk.set('n', '<leader>mn', function()
   vim.ui.input({ prompt = 'Session name: ' }, function(input)
     if input and input ~= '' then
       MiniSessions.write(input)
@@ -91,13 +93,13 @@ vim.keymap.set('n', '<leader>mn', function()
     end
   end)
 end, { desc = 'New session' })
-vim.keymap.set('n', '<leader>mr', function()
+vk.set('n', '<leader>mr', function()
   MiniSessions.select('read')
 end, { desc = 'Read session' })
-vim.keymap.set('n', '<leader>mw', function()
+vk.set('n', '<leader>mw', function()
   MiniSessions.select('write')
 end, { desc = 'Write session' })
-vim.keymap.set('n', '<leader>md', function()
+vk.set('n', '<leader>md', function()
   MiniSessions.select('delete')
 end, { desc = 'Delete session' })
 

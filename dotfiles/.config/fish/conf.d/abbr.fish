@@ -2,7 +2,7 @@
 abbr -a -- nv nvim
 abbr -a -- lg lazygit
 abbr -a --set-cursor='%' -- e 'eza --icons -a%'
-abbr -a --set-cursor='%' -- el 'eza --icons --header --git -al%'
+abbr -a --set-cursor='%' -- el 'eza --icons --header --git --loc -al%'
 
 #package manager
 abbr -a --set-cursor='%' -- pkglist 'pacman -Qq% | fzf --style full --preview "pacman -Qi {}"'

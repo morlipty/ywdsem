@@ -49,10 +49,9 @@ local modes = {
 
 function Statusline()
   local m = api.nvim_get_mode().mode
-  local mode_str = modes[m] or m
 
   local parts = {
-    mode_str,
+    modes[m] or m,
     b.minidiff_summary_string or '',
     '%=%<%F %r%m%h%=',
     vim.diagnostic.status(),

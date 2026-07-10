@@ -10,6 +10,7 @@ o.number = true
 o.relativenumber = true
 o.signcolumn = 'yes'
 o.cursorline = true
+o.cursorlineopt = 'screenline,number'
 o.fillchars = 'eob: '
 o.list = true
 o.listchars = 'extends:…,precedes:…'

@@ -1,62 +1,65 @@
 local o = vim.o
 local g = vim.g
 
--- Leader keys
 g.mapleader = ' '
 g.maplocalleader = ' '
 
--- Visual
+o.confirm = true
+o.undofile = true
+o.updatetime = 200
+
+-- UI & Appearance
 o.number = true
 o.relativenumber = true
 o.signcolumn = 'yes'
+
 o.cursorline = true
 o.cursorlineopt = 'screenline,number'
-o.fillchars = 'eob: '
+
+o.ruler = false
+o.showmode = false
+o.laststatus = 3
+
 o.list = true
+o.fillchars = 'eob: '
 o.listchars = 'extends:…,precedes:…'
 
 o.winborder = 'rounded'
 o.pumborder = 'rounded'
-
-o.foldlevel = 10
-o.laststatus = 3
-
-o.scrolloff = 8
-o.sidescrolloff = 8
-o.smoothscroll = true
 
 o.wrap = false
 o.linebreak = true
 o.breakindent = true
 o.breakindentopt = 'list:-1'
 
-o.showmode = false
-o.ruler = false
+o.foldlevel = 10
 
--- Behavior
-o.updatetime = 200
-
-o.confirm = true
-o.undofile = true
-
+-- Editing & Indentation
 o.tabstop = 2
-o.expandtab = true
 o.shiftwidth = 2
+o.expandtab = true
 o.shiftround = true
-o.smartindent = true
 
+o.smartindent = true
+o.virtualedit = 'block'
+
+-- Search
 o.smartcase = true
 o.ignorecase = true
 
+-- Scrolling & Navigation
+o.scrolloff = 8
+o.sidescrolloff = 8
+o.smoothscroll = true
 o.jumpoptions = 'view'
-o.splitkeep = 'screen'
+
+-- Splits
 o.splitbelow = true
 o.splitright = true
-
-o.virtualedit = 'block'
+o.splitkeep = 'screen'
 
 -- Disable built in providers
-g.loaded_python3_provider = 0
 g.loaded_ruby_provider = 0
 g.loaded_perl_provider = 0
 g.loaded_node_provider = 0
+g.loaded_python3_provider = 0

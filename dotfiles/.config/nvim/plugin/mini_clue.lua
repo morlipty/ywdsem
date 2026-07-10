@@ -36,10 +36,13 @@ mini_clue.setup({
     { mode = { 'n', 'x' }, keys = 's' },
 
     -- fzf-lua
-    { mode = { 'i', 'n' }, keys = '\\' },
+    { mode = 'n', keys = '\\' },
   },
 
   clues = {
+    { mode = 'n', keys = '<Leader>d', desc = '+DAP' },
+    { mode = 'n', keys = '<Leader>m', desc = '+MINI' },
+    { mode = 'n', keys = '<Leader>t', desc = '+Toggle' },
     mini_clue.gen_clues.square_brackets(),
     mini_clue.gen_clues.builtin_completion(),
     mini_clue.gen_clues.g(),

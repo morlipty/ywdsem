@@ -1,5 +1,10 @@
 local vk = vim.keymap
 
+-- Copy and paste
+vk.set({ 'n', 'x' }, '<leader>y', '"+y', { desc = 'Copy to system clipboard' })
+vk.set('n', '<leader>p', '"+p', { desc = 'Paste from system clipboard' })
+vk.set('x', '<leader>p', '"+P', { desc = 'Paste from system clipboard' })
+
 -- Center screen on jumps
 vk.set('n', '<C-d>', '<C-d>zz')
 vk.set('n', '<C-u>', '<C-u>zz')

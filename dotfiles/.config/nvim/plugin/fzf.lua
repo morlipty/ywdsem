@@ -1,6 +1,6 @@
 vim.pack.add({ 'https://github.com/ibhagwan/fzf-lua' })
 
-local vk = vim.keymap
+local map = vim.keymap.set
 
 local fzflua = require('fzf-lua')
 
@@ -12,39 +12,39 @@ fzflua.setup({
   ui_select = {},
 })
 
-vk.set('n', '\\\\', function()
+map('n', '\\\\', function()
   fzflua.builtin()
 end, { desc = 'Search' })
 
-vk.set('n', '\\b', function()
+map('n', '\\b', function()
   fzflua.buffers()
 end, { desc = 'Buffers' })
 
-vk.set('n', '\\f', function()
+map('n', '\\f', function()
   fzflua.files()
 end, { desc = 'Files' })
 
-vk.set('n', '\\d', function()
+map('n', '\\d', function()
   fzflua.diagnostics_document()
 end, { desc = 'Documents Diagnostics' })
 
-vk.set('n', '\\D', function()
+map('n', '\\D', function()
   fzflua.diagnostics_workspace()
 end, { desc = 'Workspace Diagnostics' })
 
-vk.set('n', '\\l', function()
+map('n', '\\l', function()
   fzflua.live_grep()
 end, { desc = 'Live grep search' })
 
-vk.set('n', '\\c', function()
+map('n', '\\c', function()
   fzflua.grep_curbuf()
 end, { desc = 'Current buf grep search' })
 
-vk.set('n', '\\s', function()
+map('n', '\\s', function()
   fzflua.spell_suggest()
 end, { desc = 'Spell suggest' })
 
-vk.set('n', '\\t', function()
+map('n', '\\t', function()
   fzflua.grep({
     search = '\\[(TODO|FIXME|HACK|NOTE)\\]',
     cmd = 'rg --color=always --smart-case',

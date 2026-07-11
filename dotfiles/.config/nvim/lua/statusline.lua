@@ -1,7 +1,7 @@
 local api = vim.api
 local b = vim.b
 
-local update_lsp_client_names = function(ev)
+local function update_lsp_client_names(ev)
   local buf = ev.buf
 
   local clients = vim.lsp.get_clients({ bufnr = buf })

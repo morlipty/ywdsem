@@ -1,29 +1,24 @@
 local api = vim.api
 local b = vim.b
 
-api.nvim_create_autocmd({ 'LspAttach', 'LspDetach' }, {
-  callback = vim.schedule_wrap(function(ev)
-    local buf = ev.buf
+local update_lsp_client_names = function(ev)
+  local buf = ev.buf
 
-    if not api.nvim_buf_is_valid(buf) then
-      return
+  local clients = vim.lsp.get_clients({ bufnr = buf })
+
+  local detaching_id = ev.event == 'LspDetach' and ev.data.client_id
+  local names = {}
+
+  for _, client in ipairs(clients) do
+    if client.id ~= detaching_id then
+      names[#names + 1] = client.name
     end
+  end
 
-    local clients = vim.lsp.get_clients({ bufnr = buf })
+  b[buf].lsp_client_names = #names > 0 and ' ' .. table.concat(names, ' ') or nil
+end
 
-    if #clients > 0 then
-      local names = {}
-      for i = 1, #clients do
-        names[i] = clients[i].name
-      end
-      b[buf].lsp_clients = ' ' .. table.concat(names, ' ') .. ' '
-    else
-      b[buf].lsp_clients = nil
-    end
-
-    vim.cmd('redrawstatus')
-  end),
-})
+api.nvim_create_autocmd({ 'LspAttach', 'LspDetach' }, { callback = update_lsp_client_names })
 
 -- stylua: ignore start
 local function mode(name, hl)
@@ -58,8 +53,8 @@ function Statusline()
     b.minidiff_summary_string or '',
     '%=%<%F %r%m%h%=',
     vim.diagnostic.status(),
-    b.lsp_clients or '',
-    '%y',
+    b.lsp_client_names or '',
+    ' %y',
   })
 end
 

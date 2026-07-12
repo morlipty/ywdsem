@@ -5,7 +5,6 @@ local map = vim.keymap.set
 local fzflua = require('fzf-lua')
 
 fzflua.setup({
-  fzf_colors = true,
   fzf_opts = {
     ['--layout'] = 'default',
   },
@@ -23,6 +22,10 @@ end, { desc = 'Buffers' })
 map('n', '\\f', function()
   fzflua.files()
 end, { desc = 'Files' })
+
+map('n', '\\o', function()
+  fzflua.oldfiles()
+end, { desc = 'Oldfiles' })
 
 map('n', '\\d', function()
   fzflua.diagnostics_document()

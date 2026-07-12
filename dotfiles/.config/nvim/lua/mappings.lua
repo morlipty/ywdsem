@@ -46,9 +46,9 @@ end, { expr = true })
 -- Toggle wrapping
 map('n', '<leader>tw', function()
   vim.wo.wrap = not vim.wo.wrap
-end, { desc = 'Toggle wrapping' })
+end, { desc = 'Toggle line wrapping' })
 
 -- Toggle inlay hints
 map('n', '<leader>th', function()
   vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-end, { desc = 'Toggle inlay hints' })
+end, { desc = 'Toggle LSP inlay hints' })

@@ -9,17 +9,26 @@ map('x', '<leader>p', '"+P', { desc = 'Paste from system clipboard' })
 map('n', '<C-d>', '<C-d>zz')
 map('n', '<C-u>', '<C-u>zz')
 
+-- Window movement
+map('n', '<C-h>', '<C-w>h')
+map('n', '<C-j>', '<C-w>j')
+map('n', '<C-k>', '<C-w>k')
+map('n', '<C-l>', '<C-w>l')
+
 -- Better movement in insert mode
-map('i', '<M-k>', '<Up>')
-map('i', '<M-j>', '<Down>')
-map('i', '<M-l>', '<Right>')
 map('i', '<M-h>', '<Left>')
+map('i', '<M-j>', '<Down>')
+map('i', '<M-k>', '<Up>')
+map('i', '<M-l>', '<Right>')
 
 -- Window resizing
 map('n', '<C-Up>', '<C-w>+')
 map('n', '<C-Down>', '<C-w>-')
 map('n', '<C-Right>', '<C-w>>')
 map('n', '<C-Left>', '<C-w><')
+
+-- Clear highlighting
+map('n', '<leader>/', vim.cmd.nohlsearch)
 
 -- Toggle wrapping
 map('n', '<leader>tw', function()

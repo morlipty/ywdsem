@@ -1,6 +1,7 @@
 local api = vim.api
 local b = vim.b
 local tconcat = table.concat
+local fn_mode = vim.fn.mode
 
 local function update_lsp_client_names(ev)
   local buf = ev.buf
@@ -24,29 +25,31 @@ api.nvim_create_autocmd({ 'LspAttach', 'LspDetach' }, { callback = update_lsp_cl
 local function mode(name, hl)
   return string.format('%%#Stl%sInv#%%#Stl%s#%s%%#Stl%sInv#%%* ', hl, hl, name, hl)
 end
--- stylua: ignore start
-local modes = {
-  ['n']   = mode('NORMAL', 'Normal'),
-  ['v']   = mode('VISUAL', 'Visual'),
-  ['V']   = mode('V-LINE', 'Visual'),
+
+local modes = setmetatable({
+  ['n'] = mode('NORMAL', 'Normal'),
+  ['v'] = mode('VISUAL', 'Visual'),
+  ['V'] = mode('V-LINE', 'Visual'),
   ['\22'] = mode('V-BLCK', 'Visual'),
-  ['s']   = mode('SELECT', 'Visual'),
-  ['S']   = mode('S-LINE', 'Visual'),
+  ['s'] = mode('SELECT', 'Visual'),
+  ['S'] = mode('S-LINE', 'Visual'),
   ['\19'] = mode('S-BLCK', 'Visual'),
-  ['i']   = mode('INSERT', 'Insert'),
-  ['R']   = mode('REPLCE', 'Replace'),
-  ['c']   = mode('CMDLIN', 'Command'),
-  ['r']   = mode('PROMPT', 'Command'),
-  ['!']   = mode('  SH  ', 'Command'),
-  ['t']   = mode(' TERM ', 'Terminal'),
-}
--- stylua: ignore end
+  ['i'] = mode('INSERT', 'Insert'),
+  ['R'] = mode('REPLCE', 'Replace'),
+  ['c'] = mode('CMDLIN', 'Command'),
+  ['r'] = mode('PROMPT', 'Command'),
+  ['!'] = mode('  SH  ', 'Command'),
+  ['t'] = mode(' TERM ', 'Terminal'),
+}, {
+  __index = function(t, k)
+    t[k] = mode(k, 'Normal')
+    return t[k]
+  end,
+})
 
 function Statusline()
-  local m = vim.fn.mode()
-
   return tconcat({
-    modes[m] or mode(m),
+    modes[fn_mode()],
     b.minidiff_summary_string or '',
     '%=%<%F %r%m%h%=',
     vim.diagnostic.status(),

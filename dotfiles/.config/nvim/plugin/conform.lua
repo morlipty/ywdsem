@@ -4,9 +4,6 @@ local conform = require('conform')
 
 conform.setup({
   default_format_opts = {
-    quiet = false,
-    async = false,
-    timeout_ms = 3000,
     lsp_format = 'fallback',
   },
 

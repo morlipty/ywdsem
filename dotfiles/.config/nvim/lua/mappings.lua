@@ -8,6 +8,8 @@ map('x', '<leader>p', '"+P', { desc = 'Paste from system clipboard' })
 -- Center screen on jumps
 map('n', '<C-d>', '<C-d>zz')
 map('n', '<C-u>', '<C-u>zz')
+map('n', 'n', 'nzzzv')
+map('n', 'N', 'Nzzzv')
 
 -- Window movement
 map('n', '<C-h>', '<C-w>h')

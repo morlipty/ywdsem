@@ -27,8 +27,21 @@ map('n', '<C-Down>', '<C-w>-')
 map('n', '<C-Right>', '<C-w>>')
 map('n', '<C-Left>', '<C-w><')
 
--- Clear highlighting
-map('n', '<leader>/', vim.cmd.nohlsearch)
+-- Reselect latest changed, put, or yanked text
+map('n', 'gV', function()
+  local mode = vim.fn.getregtype():sub(1, 1)
+  mode = mode == '\22' and '<C-v>' or mode
+  return '`[' .. mode .. '`]'
+end, {
+  expr = true,
+  desc = 'Visually select changed text',
+})
+
+-- Better esc key
+map({ 'n', 'i', 's' }, '<esc>', function()
+  vim.cmd.nohlsearch()
+  return '<esc>'
+end, { expr = true })
 
 -- Toggle wrapping
 map('n', '<leader>tw', function()

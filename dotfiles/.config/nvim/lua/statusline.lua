@@ -1,5 +1,6 @@
 local api = vim.api
 local b = vim.b
+local tconcat = table.concat
 
 local function update_lsp_client_names(ev)
   local buf = ev.buf
@@ -15,19 +16,15 @@ local function update_lsp_client_names(ev)
     end
   end
 
-  b[buf].lsp_client_names = #names > 0 and ' ' .. table.concat(names, ' ') or nil
+  b[buf].lsp_client_names = #names > 0 and ' ' .. tconcat(names, ' ') or nil
 end
 
 api.nvim_create_autocmd({ 'LspAttach', 'LspDetach' }, { callback = update_lsp_client_names })
 
--- stylua: ignore start
 local function mode(name, hl)
-  return table.concat({
-    '%#Stl', hl, 'Inv#',
-    '%#Stl', hl, '#', name,
-    '%#Stl', hl, 'Inv#%* ',
-    })
+  return string.format('%%#Stl%sInv#%%#Stl%s#%s%%#Stl%sInv#%%* ', hl, hl, name, hl)
 end
+-- stylua: ignore start
 local modes = {
   ['n']   = mode('NORMAL', 'Normal'),
   ['v']   = mode('VISUAL', 'Visual'),
@@ -46,10 +43,10 @@ local modes = {
 -- stylua: ignore end
 
 function Statusline()
-  local m = api.nvim_get_mode().mode
+  local m = vim.fn.mode()
 
-  return table.concat({
-    modes[m] or m,
+  return tconcat({
+    modes[m] or mode(m),
     b.minidiff_summary_string or '',
     '%=%<%F %r%m%h%=',
     vim.diagnostic.status(),

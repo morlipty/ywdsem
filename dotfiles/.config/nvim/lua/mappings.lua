@@ -31,8 +31,7 @@ map('n', '<C-Left>', '<C-w><')
 
 -- Reselect latest changed, put, or yanked text
 map('n', 'gV', function()
-  local mode = vim.fn.getregtype():sub(1, 1)
-  return '`[' .. mode .. '`]'
+  return '`[' .. vim.fn.getregtype():sub(1, 1) .. '`]'
 end, {
   expr = true,
   replace_keycodes = false,

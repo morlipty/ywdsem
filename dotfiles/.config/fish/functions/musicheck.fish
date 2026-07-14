@@ -22,24 +22,13 @@ function musicheck --description "Summarize audio or art properties of FLAC file
         return 1
     end
 
-    # --- scan ---
-    set -l files (fd --extension flac . ~/Music)
-    set -l total (count $files)
-    set -l i 0
-
-    for file in $files
-        set i (math $i + 1)
-        printf "\rScanning %d/%d" $i $total >&2
-
-        set -l result (ffprobe -v error -select_streams $stream \
-            -show_entries $entries -of csv=p=0 $file)
-
-        if test -z "$result"
-            echo MISSING
-        else
-            echo $result
-        end
-    end | sort | uniq -c | sort -rn
-
-    echo >&2
+    # --- parallel scan with fd -x ---
+    fd --extension flac . ~/Music -x fish -c '
+    set r (ffprobe -v error -select_streams $argv[1] -show_entries $argv[2] -of csv=p=0 $argv[3] 2>/dev/null)
+    if test -z "$r"
+        echo MISSING
+    else
+        echo "$r"
+    end
+' $stream $entries {} | sort | uniq -c | sort -rn
 end

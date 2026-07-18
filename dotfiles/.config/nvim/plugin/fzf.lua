@@ -50,7 +50,6 @@ end, { desc = 'Spell suggest' })
 map('n', '\\t', function()
   fzflua.grep({
     search = '\\[(TODO|FIXME|HACK|NOTE)\\]',
-    cmd = 'rg --color=always --smart-case',
     no_esc = true,
   })
 end, { desc = 'Search for TODOS etc' })

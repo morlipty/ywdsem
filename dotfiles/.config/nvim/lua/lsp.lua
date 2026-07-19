@@ -11,8 +11,6 @@ vim.lsp.enable({
   'rust_analyzer',
   -- Markdown
   'marksman',
-  -- Oxfmt
-  'oxfmt',
   -- Github actions
   'gh_actions_ls',
   -- Fish

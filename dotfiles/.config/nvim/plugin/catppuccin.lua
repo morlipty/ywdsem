@@ -1,4 +1,4 @@
-vim.pack.add({ 'https://github.com/catppuccin/nvim' })
+vim.pack.add({ { src = 'https://github.com/catppuccin/nvim', name = 'catppuccin' } })
 
 local catppuccin = require('catppuccin')
 
@@ -38,9 +38,8 @@ catppuccin.setup({
       StlInactiveInv = { fg = c.surface1, bg = c.none },
     }
   end,
+  auto_integrations = true,
   integrations = {
-    mason = true,
-    markview = true,
     mini = {
       indentscope_color = 'mauve',
     },

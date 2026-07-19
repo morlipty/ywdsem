@@ -18,7 +18,6 @@ vim.api.nvim_create_user_command('MasonInstallAll', function()
     -- python
     'ty',
     'ruff',
-    'basedpyright',
     -- lua
     'lua-language-server',
     'stylua',

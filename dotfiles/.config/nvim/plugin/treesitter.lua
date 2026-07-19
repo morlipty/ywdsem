@@ -5,7 +5,7 @@ vim.pack.add({
 
 local treesitter = require('nvim-treesitter')
 
-treesitter.install({
+local parsers = {
   'python',
   'lua',
   'bash',
@@ -18,7 +18,9 @@ treesitter.install({
   'latex',
   'rust',
   'ron',
-})
+}
+
+treesitter.install(parsers)
 
 vim.api.nvim_create_autocmd('PackChanged', {
   callback = function(ev)
@@ -27,7 +29,7 @@ vim.api.nvim_create_autocmd('PackChanged', {
       if not ev.data.active then
         vim.cmd.packadd('nvim-treesitter')
       end
-      vim.cmd('TSUpdate')
+      treesitter.update()
     end
   end,
 })

@@ -13,23 +13,17 @@ mason.setup({
 })
 
 vim.api.nvim_create_user_command('MasonInstallAll', function()
-  local installing = {}
+  local did_install = false
   local ensure = {
-    -- python
     'ty',
     'ruff',
-    -- lua
     'lua-language-server',
     'stylua',
-    -- bash
     'bash-language-server',
     'shellcheck',
     'shfmt',
-    -- markdown
     'marksman',
-    -- oxfmt
     'oxfmt',
-    -- fish
     'fish-lsp',
   }
 
@@ -39,14 +33,13 @@ vim.api.nvim_create_user_command('MasonInstallAll', function()
     for _, tool in ipairs(ensure) do
       local pkg = mr.get_package(tool)
       if not pkg:is_installed() then
-        table.insert(installing, tool)
+        did_install = true
+        vim.notify('Installing ' .. tool)
         pkg:install()
       end
     end
 
-    if #installing > 0 then
-      vim.notify('Installing ' .. table.concat(installing, ', '))
-    else
+    if not did_install then
       vim.notify('All mason tools are already installed')
     end
   end)

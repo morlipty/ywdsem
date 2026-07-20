@@ -72,11 +72,7 @@ vim.api.nvim_create_autocmd('FileType', {
   end,
 })
 
-require('mini.move').setup({
-  options = {
-    reindent_linewise = false,
-  },
-})
+require('mini.move').setup()
 
 require('mini.notify').setup()
 map('n', '<leader>mh', function()

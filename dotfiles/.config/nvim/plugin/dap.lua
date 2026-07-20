@@ -12,52 +12,52 @@ vim.fn.sign_define('DapBreakpoint', { text = '🐞' })
 
 map('n', '<Leader>dc', function()
   dap.continue()
-end, { desc = 'dap continue' })
+end, { desc = 'Continue' })
 
 map('n', '<Leader>dso', function()
   dap.step_over()
-end, { desc = 'dap step over' })
+end, { desc = 'Step over' })
 
 map('n', '<Leader>dsi', function()
   dap.step_into()
-end, { desc = 'dap step into' })
+end, { desc = 'Step into' })
 
 map('n', '<Leader>dsO', function()
   dap.step_out()
-end, { desc = 'dap step out' })
+end, { desc = 'Step out' })
 
 map('n', '<Leader>db', function()
   dap.toggle_breakpoint()
-end, { desc = 'dap toggle breakpoint' })
+end, { desc = 'Toggle breakpoint' })
 
 map('n', '<Leader>dB', function()
   dap.set_breakpoint()
-end, { desc = 'dap set breakpoint' })
+end, { desc = 'Set breakpoint' })
 
 map('n', '<Leader>dw', function()
   dap.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))
-end, { desc = 'dep set breakpoint with log point message' })
+end, { desc = 'Set breakpoint with log point message' })
 
 map('n', '<Leader>dr', function()
   dap.repl.open()
-end, { desc = 'dap repl' })
+end, { desc = 'REPL' })
 
 map('n', '<Leader>dl', function()
   dap.run_last()
-end, { desc = 'dap run last' })
+end, { desc = 'Run last' })
 
 map({ 'n', 'x' }, '<Leader>dh', function()
   widgets.hover()
-end, { desc = 'dap hover' })
+end, { desc = 'Hover' })
 
 map({ 'n', 'x' }, '<Leader>dp', function()
   widgets.preview()
-end, { desc = 'dap preview' })
+end, { desc = 'Preview' })
 
 map('n', '<Leader>df', function()
   widgets.centered_float(widgets.frames)
-end, { desc = 'dap frames' })
+end, { desc = 'Frames' })
 
 map('n', '<Leader>ds', function()
   widgets.centered_float(widgets.scopes)
-end, { desc = 'dap scopes' })
+end, { desc = 'Scopes' })

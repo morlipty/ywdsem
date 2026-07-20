@@ -27,11 +27,11 @@ vim.api.nvim_create_user_command('MasonInstallAll', function()
     'fish-lsp',
   }
 
-  local mr = require('mason-registry')
+  local registry = require('mason-registry')
 
-  mr.refresh(function()
+  registry.refresh(function()
     for _, tool in ipairs(ensure) do
-      local pkg = mr.get_package(tool)
+      local pkg = registry.get_package(tool)
       if not pkg:is_installed() then
         did_install = true
         vim.notify('Installing ' .. tool)

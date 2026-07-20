@@ -26,12 +26,12 @@ autocmd('FileType', {
 
 -- Restore cursor position after reopening file
 autocmd('BufReadPost', {
-  group = augroup('last_location'),
+  group = augroup('restore_position'),
   callback = function(ev)
     local mark = api.nvim_buf_get_mark(ev.buf, '"')
     local line_count = api.nvim_buf_line_count(ev.buf)
     if mark[1] > 0 and mark[1] <= line_count then
-      vim.cmd('normal! g`"zz')
+      api.nvim_feedkeys('g`"zvzz', 'n', true)
     end
   end,
 })

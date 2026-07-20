@@ -56,6 +56,7 @@ end
 
 map_toggle('w', 'Wrapping', 'wrap')
 map_toggle('s', 'Spell checking', 'spell')
+map_toggle('r', 'Relative numbers', 'relativenumber')
 
 map_toggle('i', 'LSP inlay hints', function()
   local inlay_hint = vim.lsp.inlay_hint

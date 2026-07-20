@@ -53,3 +53,8 @@ end, { desc = 'Toggle line wrapping' })
 map('n', '<leader>th', function()
   vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 end, { desc = 'Toggle LSP inlay hints' })
+
+-- Toggle codelens
+map('n', '<leader>tc', function()
+  vim.lsp.codelens.enable(not vim.lsp.codelens.is_enabled())
+end, { desc = 'Toggle codelens' })

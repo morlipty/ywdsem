@@ -2,9 +2,9 @@ vim.pack.add({ 'https://github.com/ibhagwan/fzf-lua' })
 
 local map = vim.keymap.set
 
-local fzflua = require('fzf-lua')
+local fzf = require('fzf-lua')
 
-fzflua.setup({
+fzf.setup({
   fzf_opts = {
     ['--layout'] = 'default',
   },
@@ -12,43 +12,43 @@ fzflua.setup({
 })
 
 map('n', '\\\\', function()
-  fzflua.builtin()
+  fzf.builtin()
 end, { desc = 'Search' })
 
 map('n', '\\b', function()
-  fzflua.buffers()
+  fzf.buffers()
 end, { desc = 'Buffers' })
 
 map('n', '\\f', function()
-  fzflua.files()
+  fzf.files()
 end, { desc = 'Files' })
 
 map('n', '\\o', function()
-  fzflua.oldfiles()
+  fzf.oldfiles()
 end, { desc = 'Oldfiles' })
 
 map('n', '\\d', function()
-  fzflua.diagnostics_document()
+  fzf.diagnostics_document()
 end, { desc = 'Documents Diagnostics' })
 
 map('n', '\\D', function()
-  fzflua.diagnostics_workspace()
+  fzf.diagnostics_workspace()
 end, { desc = 'Workspace Diagnostics' })
 
 map('n', '\\l', function()
-  fzflua.live_grep()
+  fzf.live_grep()
 end, { desc = 'Live grep search' })
 
 map('n', '\\c', function()
-  fzflua.grep_curbuf()
+  fzf.grep_curbuf()
 end, { desc = 'Current buf grep search' })
 
 map('n', '\\s', function()
-  fzflua.spell_suggest()
+  fzf.spell_suggest()
 end, { desc = 'Spell suggest' })
 
 map('n', '\\t', function()
-  fzflua.grep({
+  fzf.grep({
     search = '\\[(TODO|FIXME|HACK|NOTE)\\]',
     no_esc = true,
   })

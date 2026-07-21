@@ -16,5 +16,6 @@ colorizer.setup({
     '!help',
     '!mason',
     '!notify',
+    '!markdown',
   },
 })

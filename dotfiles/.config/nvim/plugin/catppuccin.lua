@@ -43,6 +43,7 @@ catppuccin.setup({
     mini = {
       indentscope_color = 'mauve',
     },
+    markview = false,
   },
 })
 

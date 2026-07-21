@@ -10,19 +10,14 @@ checkboxes.setup()
 
 markview.setup({
   preview = {
-    debounce = 0,
-    icon_provider = 'mini',
-    modes = { 'i', 'n', 'no', 'c' },
-    hybrid_modes = { 'i', 'n', 'no', 'c' },
+    modes = { 'n', 'no', 'c' },
+    hybrid_modes = { 'n', 'no', 'c' },
   },
 
   markdown = {
-    headings = presets.headings.slanted,
+    headings = presets.headings.glow,
     tables = presets.tables.rounded,
     horizontal_rules = presets.horizontal_rules.thick,
-  },
-
-  markdown_inline = {
-    checkboxes = presets.checkboxes.nerd,
+    block_quotes = presets.block_quotes.obsidian,
   },
 })

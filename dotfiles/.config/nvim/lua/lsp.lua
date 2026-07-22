@@ -2,6 +2,7 @@
 vim.lsp.enable({
   'lua_ls',
   'bashls',
+  'clangd',
   'ty',
   'rust_analyzer',
   'marksman',

@@ -38,7 +38,6 @@ catppuccin.setup({
       StlInactiveInv = { fg = c.surface1, bg = c.none },
     }
   end,
-  auto_integrations = true,
   integrations = {
     mini = {
       indentscope_color = 'mauve',

@@ -1,12 +1,21 @@
 -- LSP list to enable
 vim.lsp.enable({
+  -- lua
   'lua_ls',
+  -- bash
   'bashls',
+  -- c
   'clangd',
+  -- python
   'ty',
+  'ruff',
+  -- rust
   'rust_analyzer',
+  -- markdown
   'marksman',
+  -- github actions
   'gh_actions_ls',
+  -- fish
   'fish_lsp',
 })
 

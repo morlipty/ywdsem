@@ -6,6 +6,7 @@ vim.pack.add({
 local treesitter = require('nvim-treesitter')
 
 local parsers = {
+  'c',
   'python',
   'lua',
   'bash',

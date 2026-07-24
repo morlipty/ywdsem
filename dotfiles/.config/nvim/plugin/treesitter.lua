@@ -19,6 +19,8 @@ local parsers = {
   'latex',
   'rust',
   'ron',
+  'gitcommit',
+  'gitignore',
 }
 
 treesitter.install(parsers)

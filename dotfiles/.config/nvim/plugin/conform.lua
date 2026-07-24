@@ -22,6 +22,6 @@ conform.setup({
   },
 })
 
-vim.keymap.set({ 'n', 'x' }, '<leader>f', function()
+vim.keymap.set({ 'n', 'x' }, '<leader>F', function()
   conform.format()
 end, { desc = 'Format file' })

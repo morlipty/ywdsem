@@ -23,24 +23,25 @@ fzf.setup({
 })
 
 -- General
-map('n', '\\\\', fzf.builtin, { desc = 'FzfLua' })
-map('n', '\\b', fzf.buffers, { desc = 'Buffers' })
-map('n', '\\j', fzf.jumps, { desc = 'Jumps' })
-map('n', '\\f', fzf.files, { desc = 'Files' })
-map('n', '\\o', fzf.oldfiles, { desc = 'Oldfiles' })
-map('n', '\\l', fzf.live_grep, { desc = 'Live grep search' })
-map('n', '\\c', fzf.grep_curbuf, { desc = 'Current buf grep search' })
-map('n', '\\s', fzf.spell_suggest, { desc = 'Spell suggest' })
-map('n', '\\d', fzf.diagnostics_document, { desc = 'Documents Diagnostics' })
-map('n', '\\D', fzf.diagnostics_workspace, { desc = 'Workspace Diagnostics' })
+map('n', '<leader>fa', fzf.builtin, { desc = 'FzfLua' })
+map('n', '<leader>fr', fzf.resume, { desc = 'Resume' })
+map('n', '<leader>fb', fzf.buffers, { desc = 'Buffers' })
+map('n', '<leader>fj', fzf.jumps, { desc = 'Jumps' })
+map('n', '<leader>ff', fzf.files, { desc = 'Files' })
+map('n', '<leader>fo', fzf.oldfiles, { desc = 'Oldfiles' })
+map('n', '<leader>fl', fzf.live_grep, { desc = 'Live grep search' })
+map('n', '<leader>fc', fzf.grep_curbuf, { desc = 'Current buf grep search' })
+map('n', '<leader>fs', fzf.spell_suggest, { desc = 'Spell suggest' })
+map('n', '<leader>fd', fzf.diagnostics_document, { desc = 'Documents Diagnostics' })
+map('n', '<leader>fD', fzf.diagnostics_workspace, { desc = 'Workspace Diagnostics' })
 
 -- Git
-map('n', '\\gs', fzf.git_status, { desc = 'Git status' })
-map('n', '\\gf', fzf.git_files, { desc = 'Git files' })
-map('n', '\\gc', fzf.git_commits, { desc = 'Git commits' })
-map('n', '\\gb', fzf.git_bcommits, { desc = 'Git bcommits' })
+map('n', '<leader>gs', fzf.git_status, { desc = 'Git status' })
+map('n', '<leader>gf', fzf.git_files, { desc = 'Git files' })
+map('n', '<leader>gc', fzf.git_commits, { desc = 'Git commits' })
+map('n', '<leader>gb', fzf.git_bcommits, { desc = 'Git bcommits' })
 
-map('n', '\\t', function()
+map('n', '<leader>ft', function()
   fzf.grep({
     search = '\\[(TODO|FIXME|HACK|NOTE)\\]',
     no_esc = true,

@@ -34,12 +34,11 @@ mini_clue.setup({
 
     -- `s` key
     { mode = { 'n', 'x' }, keys = 's' },
-
-    -- fzf-lua
-    { mode = 'n', keys = '\\' },
   },
 
   clues = {
+    { mode = 'n', keys = '<Leader>f', desc = '+FzfLua' },
+    { mode = 'n', keys = '<Leader>g', desc = '+Git' },
     { mode = 'n', keys = '<Leader>d', desc = '+DAP' },
     { mode = 'n', keys = '<Leader>m', desc = '+MINI' },
     { mode = 'n', keys = '<Leader>t', desc = '+Toggle' },

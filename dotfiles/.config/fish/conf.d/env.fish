@@ -13,4 +13,7 @@ set -gx FZF_DEFAULT_OPTS "\
 --color=selected-bg:#45475A \
 --color=border:#6C7086,label:#CDD6F4"
 
+set -gx FZF_DEFAULT_COMMAND 'fd --hidden'
+set -gx FZF_CTRL_T_COMMAND "fd --hidden"
+set -gx FZF_ALT_C_COMMAND "fd --hidden --type directory"
 set -gx FZF_CTRL_R_OPTS "--style full --height 20 --with-nth=1,3.."

@@ -47,6 +47,9 @@ local function map_toggle(key, name, toggle)
     if type(toggle) == 'string' then
       is_enabled = not vim.wo[toggle]
       vim.wo[toggle] = is_enabled
+    elseif type(toggle) == 'table' then
+      is_enabled = not toggle.is_enabled({ bufnr = 0 })
+      toggle.enable(is_enabled, { bufnr = 0 })
     elseif type(toggle) == 'function' then
       is_enabled = toggle()
     end
@@ -58,15 +61,5 @@ map_toggle('w', 'Wrapping', 'wrap')
 map_toggle('s', 'Spell checking', 'spell')
 map_toggle('r', 'Relative numbers', 'relativenumber')
 
-map_toggle('i', 'LSP inlay hints', function()
-  local inlay_hint = vim.lsp.inlay_hint
-  local is_enabled = not inlay_hint.is_enabled({ bufnr = 0 })
-  inlay_hint.enable(is_enabled, { bufnr = 0 })
-  return is_enabled
-end)
-map_toggle('c', 'Codelens', function()
-  local codelens = vim.lsp.codelens
-  local is_enabled = not codelens.is_enabled({ bufnr = 0 })
-  codelens.enable(is_enabled, { bufnr = 0 })
-  return is_enabled
-end)
+map_toggle('i', 'LSP inlay hints', vim.lsp.inlay_hint)
+map_toggle('c', 'Codelens', vim.lsp.codelens)

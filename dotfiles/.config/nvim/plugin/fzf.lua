@@ -23,13 +23,14 @@ fzf.setup({
 })
 
 -- General
-map('n', '<leader>fa', fzf.builtin, { desc = 'FzfLua' })
+map('n', '<leader><leader>', fzf.builtin, { desc = 'FzfLua' })
 map('n', '<leader>fr', fzf.resume, { desc = 'Resume' })
 map('n', '<leader>fb', fzf.buffers, { desc = 'Buffers' })
 map('n', '<leader>fj', fzf.jumps, { desc = 'Jumps' })
 map('n', '<leader>ff', fzf.files, { desc = 'Files' })
 map('n', '<leader>fo', fzf.oldfiles, { desc = 'Oldfiles' })
 map('n', '<leader>fl', fzf.live_grep, { desc = 'Live grep search' })
+map('x', '<leader>fl', fzf.grep_visual, { desc = 'Live grep search' })
 map('n', '<leader>fc', fzf.grep_curbuf, { desc = 'Current buf grep search' })
 map('n', '<leader>fs', fzf.spell_suggest, { desc = 'Spell suggest' })
 map('n', '<leader>fd', fzf.diagnostics_document, { desc = 'Documents Diagnostics' })

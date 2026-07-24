@@ -13,6 +13,7 @@ colorizer.setup({
   },
   filetypes = {
     '*',
+    '!fzf',
     '!help',
     '!mason',
     '!notify',

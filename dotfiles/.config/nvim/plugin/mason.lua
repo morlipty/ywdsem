@@ -15,16 +15,22 @@ mason.setup({
 vim.api.nvim_create_user_command('MasonInstallAll', function()
   local did_install = false
   local ensure = {
-    'ty',
-    'ruff',
+    -- lua
     'lua-language-server',
     'stylua',
+    -- bash
     'bash-language-server',
     'shellcheck',
     'shfmt',
-    'marksman',
-    'oxfmt',
+    -- fish
     'fish-lsp',
+    -- python
+    'ty',
+    'ruff',
+    -- markdown
+    'marksman',
+    -- oxfmt
+    'oxfmt',
   }
 
   local registry = require('mason-registry')

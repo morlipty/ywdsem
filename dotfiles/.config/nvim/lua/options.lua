@@ -22,7 +22,7 @@ o.laststatus = 3
 
 o.list = true
 o.fillchars = 'eob: '
-o.listchars = 'extends:…,precedes:…'
+o.listchars = 'tab:> ,extends:…,precedes:…'
 
 o.winborder = 'rounded'
 o.pumborder = 'rounded'

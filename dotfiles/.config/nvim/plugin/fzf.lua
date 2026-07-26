@@ -37,7 +37,7 @@ map('n', '<leader>fd', fzf.diagnostics_document, { desc = 'Documents Diagnostics
 map('n', '<leader>fD', fzf.diagnostics_workspace, { desc = 'Workspace Diagnostics' })
 
 -- Git
-map('n', '<leader>gs', fzf.git_status, { desc = 'Git status' })
+map('n', '<leader>gg', fzf.git_status, { desc = 'Git status' })
 map('n', '<leader>gf', fzf.git_files, { desc = 'Git files' })
 map('n', '<leader>gc', fzf.git_commits, { desc = 'Git commits' })
 map('n', '<leader>gb', fzf.git_bcommits, { desc = 'Git bcommits' })

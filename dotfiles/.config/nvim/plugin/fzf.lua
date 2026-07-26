@@ -9,14 +9,31 @@ fzf.setup({
   fzf_opts = {
     ['--layout'] = 'default',
   },
+  keymap = {
+    builtin = {
+      ['<C-u>'] = 'preview-page-up',
+      ['<C-d>'] = 'preview-page-down',
+    },
+    fzf = {
+      ['ctrl-u'] = 'preview-page-up',
+      ['ctrl-d'] = 'preview-page-down',
+    },
+  },
   git = {
     status = {
+      winopts = { fullscreen = true },
       actions = {
         ['right'] = false,
         ['left'] = false,
         ['ctrl-h'] = { fn = actions.git_stage, reload = true },
         ['ctrl-l'] = { fn = actions.git_unstage, reload = true },
       },
+    },
+    commits = {
+      winopts = { fullscreen = true },
+    },
+    bcommits = {
+      winopts = { fullscreen = true },
     },
   },
   ui_select = {},

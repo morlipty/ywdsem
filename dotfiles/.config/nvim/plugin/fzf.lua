@@ -11,12 +11,12 @@ fzf.setup({
   },
   keymap = {
     builtin = {
-      ['<C-u>'] = 'preview-page-up',
-      ['<C-d>'] = 'preview-page-down',
+      ['<C-p>'] = 'preview-page-up',
+      ['<C-n>'] = 'preview-page-down',
     },
     fzf = {
-      ['ctrl-u'] = 'preview-page-up',
-      ['ctrl-d'] = 'preview-page-down',
+      ['ctrl-p'] = 'preview-page-up',
+      ['ctrl-n'] = 'preview-page-down',
     },
   },
   git = {

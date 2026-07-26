@@ -1,11 +1,19 @@
 set scrolloff=5
 set incsearch
-set clipboard+=unnamedplus
+set number
 set relativenumber
 
 set mini-ai
+set ideajoin
+set highlightedyank
+set commentary
 
-map Q gq
+nnoremap <leader>y "+y
+xnoremap <leader>y "+y
+nnoremap <leader>p "+p
+xnoremap <leader>p "+P
 
-Plug 'machakann/vim-highlightedyank'
-Plug 'tpope/vim-commentary'
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+nnoremap n nzzzv
+nnoremap N Nzzzv

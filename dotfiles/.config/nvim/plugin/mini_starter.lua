@@ -1,10 +1,10 @@
+local mini_starter = require('mini.starter')
+
 local header_art = [[
  ╭╮╭┬─╮╭─╮┬  ┬┬╭┬╮
  │││├┤ │ │╰┐┌╯││││
  ╯╰╯╰─╯╰─╯ ╰╯ ┴┴ ┴
 ]]
-
-local mini_starter = require('mini.starter')
 
 mini_starter.setup({
   evaluate_single = true,

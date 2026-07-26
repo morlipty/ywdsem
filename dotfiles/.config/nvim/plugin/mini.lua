@@ -1,6 +1,7 @@
 vim.pack.add({ 'https://github.com/nvim-mini/mini.nvim' })
 
 local map = vim.keymap.set
+local autocmd = vim.api.nvim_create_autocmd
 
 require('mini.ai').setup()
 
@@ -11,7 +12,7 @@ require('mini.bracketed').setup()
 require('mini.cursorword').setup()
 
 require('mini.diff').setup()
-vim.api.nvim_create_autocmd('User', {
+autocmd('User', {
   pattern = 'MiniDiffUpdated',
   callback = function(ev)
     local summary = vim.b[ev.buf].minidiff_summary
@@ -60,7 +61,7 @@ require('mini.indentscope').setup({
   },
   symbol = '│',
 })
-vim.api.nvim_create_autocmd('FileType', {
+autocmd('FileType', {
   pattern = {
     'fzf',
     'help',

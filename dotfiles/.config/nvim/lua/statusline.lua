@@ -1,7 +1,7 @@
-local api = vim.api
 local b = vim.b
 local tconcat = table.concat
 local fn_mode = vim.fn.mode
+local autocmd = vim.api.nvim_create_autocmd
 
 local function update_lsp_client_names(ev)
   local buf = ev.buf
@@ -20,7 +20,7 @@ local function update_lsp_client_names(ev)
   b[buf].lsp_client_names = #names > 0 and ' ' .. tconcat(names, ' ') or nil
 end
 
-api.nvim_create_autocmd({ 'LspAttach', 'LspDetach' }, { callback = update_lsp_client_names })
+autocmd({ 'LspAttach', 'LspDetach' }, { callback = update_lsp_client_names })
 
 local function mode(name, hl)
   return string.format('%%#Stl%sInv#%%#Stl%s#%s%%#Stl%sInv#%%* ', hl, hl, name, hl)
@@ -52,6 +52,8 @@ local modes = setmetatable({
 function Statusline()
   return tconcat({
     modes[fn_mode()],
+    b.minigit_summary_string or '',
+    ' ',
     b.minidiff_summary_string or '',
     '%=%<%F %r%m%h%=',
     vim.diagnostic.status(),

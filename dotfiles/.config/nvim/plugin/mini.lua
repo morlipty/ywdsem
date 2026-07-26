@@ -29,6 +29,8 @@ vim.api.nvim_create_autocmd('User', {
   end,
 })
 
+require('mini.git').setup()
+
 require('mini.hipatterns').setup({
   highlighters = {
     fixme = {

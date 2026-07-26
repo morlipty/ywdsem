@@ -35,3 +35,12 @@ autocmd('BufWinEnter', {
     end
   end,
 })
+
+-- Automatically enable spell checking for specified filetypes
+autocmd('FileType', {
+  group = augroup('spell'),
+  pattern = { 'gitcommit', 'markdown' },
+  callback = function()
+    vim.wo.spell = true
+  end,
+})

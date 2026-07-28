@@ -29,6 +29,9 @@ autocmd('User', {
     vim.b[ev.buf].minidiff_summary_string = table.concat(t, ' ') .. '%*'
   end,
 })
+map('n', '<leader>to', function()
+  MiniDiff.toggle_overlay(0)
+end, { desc = 'Toggle diff overlay' })
 
 require('mini.git').setup()
 

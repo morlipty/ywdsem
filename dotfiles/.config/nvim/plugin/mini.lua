@@ -31,7 +31,7 @@ autocmd('User', {
 })
 map('n', '<leader>to', function()
   MiniDiff.toggle_overlay(0)
-end, { desc = 'Toggle diff overlay' })
+end, { desc = 'Toggle Diff overlay' })
 
 require('mini.git').setup()
 

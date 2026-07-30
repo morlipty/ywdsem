@@ -1,7 +1,9 @@
 let mapleader = " "
 
-set scrolloff=5
 set incsearch
+set scrolloff=5
+set ignorecase
+set smartcase
 set number
 set relativenumber
 
@@ -9,6 +11,7 @@ set mini-ai
 set ideajoin
 set highlightedyank
 set commentary
+set NERDTree
 
 nnoremap <leader>y "+y
 xnoremap <leader>y "+y

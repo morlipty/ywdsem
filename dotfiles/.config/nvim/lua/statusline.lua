@@ -3,9 +3,7 @@ local autocmd = vim.api.nvim_create_autocmd
 local get_mode = vim.api.nvim_get_mode
 
 local function update_lsp_client_names(ev)
-  local buf = ev.buf
-
-  local clients = vim.lsp.get_clients({ bufnr = buf })
+  local clients = vim.lsp.get_clients({ bufnr = ev.buf })
 
   local detaching_id = ev.event == 'LspDetach' and ev.data.client_id
   local names = {}
@@ -16,7 +14,7 @@ local function update_lsp_client_names(ev)
     end
   end
 
-  b[buf].lsp_client_names = #names > 0 and ' ' .. table.concat(names, ' ') or nil
+  b[ev.buf].lsp_client_names = #names > 0 and ' ' .. table.concat(names, ' ') or nil
 end
 
 autocmd({ 'LspAttach', 'LspDetach' }, { callback = update_lsp_client_names })

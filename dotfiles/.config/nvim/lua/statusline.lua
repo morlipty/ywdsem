@@ -1,6 +1,6 @@
 local b = vim.b
 local autocmd = vim.api.nvim_create_autocmd
-local get_mode = vim.api.nvim_get_mode
+local fn_mode = vim.fn.mode
 
 local function update_lsp_client_names(ev)
   local clients = vim.lsp.get_clients({ bufnr = ev.buf })
@@ -47,7 +47,7 @@ local modes = setmetatable({
 -- stylua: ignore end
 
 function Statusline()
-  return modes[get_mode().mode]
+  return modes[fn_mode()]
     .. (b.minigit_summary_string or '')
     .. ' '
     .. (b.minidiff_summary_string or '')

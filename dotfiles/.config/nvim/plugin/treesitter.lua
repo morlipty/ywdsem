@@ -20,6 +20,7 @@ local parsers = {
   'rust',
   'ron',
   'gitcommit',
+  'diff',
   'gitignore',
 }
 

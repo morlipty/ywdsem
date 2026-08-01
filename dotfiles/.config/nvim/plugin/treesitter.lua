@@ -21,6 +21,7 @@ local parsers = {
   'ron',
   'gitcommit',
   'diff',
+  'git_rebase',
   'gitignore',
 }
 

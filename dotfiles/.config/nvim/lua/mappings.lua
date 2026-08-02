@@ -11,11 +11,11 @@ map('n', '<C-u>', '<C-u>zz')
 map('n', 'n', 'nzzzv')
 map('n', 'N', 'Nzzzv')
 
--- Window movement
-map('n', '<C-h>', '<C-w>h')
-map('n', '<C-j>', '<C-w>j')
-map('n', '<C-k>', '<C-w>k')
-map('n', '<C-l>', '<C-w>l')
+-- Motion and search
+map('n', '<C-h>', '^')
+map('n', '<C-j>', '*')
+map('n', '<C-k>', '#')
+map('n', '<C-l>', '$')
 
 -- Better movement in insert mode
 map('i', '<M-h>', '<Left>')

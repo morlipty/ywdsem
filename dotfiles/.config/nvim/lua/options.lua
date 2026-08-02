@@ -43,6 +43,8 @@ o.shiftround = true
 o.smartindent = true
 o.virtualedit = 'block'
 
+o.spelloptions = 'camel'
+
 -- Search
 o.smartcase = true
 o.ignorecase = true

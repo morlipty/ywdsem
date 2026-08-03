@@ -13,6 +13,5 @@ if status is-interactive
     fzf --fish | source
     starship init fish | source
     zoxide init --cmd cd fish | source
+    fish_config theme choose catppuccin-mocha
 end
-
-fish_config theme choose default

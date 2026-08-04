@@ -20,7 +20,7 @@ end
 autocmd({ 'LspAttach', 'LspDetach' }, { callback = update_lsp_client_names })
 
 local function mode(name, hl)
-  return '%#Stl' .. hl .. 'Inv#%#Stl' .. hl .. '#' .. name .. '%#Stl' .. hl .. 'Inv#%* '
+  return '%#Stl' .. hl .. 'Inv#▐%#Stl' .. hl .. '#' .. name .. '%#Stl' .. hl .. 'Inv#▌%* '
 end
 
 -- stylua: ignore start

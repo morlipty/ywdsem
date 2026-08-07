@@ -11,5 +11,6 @@ if status is-interactive
     fzf --fish | source
     starship init fish | source
     zoxide init --cmd cd fish | source
+    eval (zellij setup --generate-auto-start fish | string collect)
     fish_config theme choose catppuccin-mocha
 end

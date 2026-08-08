@@ -11,6 +11,9 @@ catppuccin.setup({
     transparent = true,
     solid = false,
   },
+  styles = {
+    functions = { 'italic' },
+  },
   custom_highlights = function(c)
     return {
       BlinkCmpMenuBorder = { bg = c.none },

@@ -1,0 +1,9 @@
+[flags]
+expanded = true
+
+[memory_graph]
+cache_memory = true
+
+[processes]
+default_sort = "mem"
+default_memory_value = true

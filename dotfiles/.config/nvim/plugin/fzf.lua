@@ -39,6 +39,18 @@ fzf.setup({
         ['left'] = false,
         ['ctrl-h'] = { fn = actions.git_stage, reload = true },
         ['ctrl-l'] = { fn = actions.git_unstage, reload = true },
+        ['ctrl-a'] = {
+          fn = function()
+            vim.cmd('Git add -A')
+          end,
+          reload = true,
+        },
+        ['ctrl-r'] = {
+          fn = function()
+            vim.cmd('Git reset')
+          end,
+          reload = true,
+        },
         ['ctrl-i'] = {
           fn = function()
             vim.cmd('Git commit')

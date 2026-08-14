@@ -23,7 +23,10 @@ fzf.setup({
     actions = {
       ['ctrl-i'] = {
         fn = function(_, opts)
-          fzf.oldfiles({ cwd_only = not opts.cwd_only })
+          fzf.oldfiles({
+            cwd_only = not opts.cwd_only,
+            query = opts.last_query,
+          })
         end,
       },
     },

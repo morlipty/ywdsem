@@ -79,9 +79,9 @@ map('n', '<leader>gg', fzf.git_status, { desc = 'Git status' })
 map('n', '<leader>gf', fzf.git_files, { desc = 'Git files' })
 map('n', '<leader>gc', fzf.git_commits, { desc = 'Git commits' })
 map('n', '<leader>gb', fzf.git_bcommits, { desc = 'Git bcommits' })
-map('n', '<leader>gr', fzf.git_reflog, { desc = 'Git bcommits' })
-map('n', '<leader>gs', fzf.git_stash, { desc = 'Git bcommits' })
-map('n', '<leader>gh', fzf.git_hunks, { desc = 'Git bcommits' })
+map('n', '<leader>gr', fzf.git_reflog, { desc = 'Git reflog' })
+map('n', '<leader>gs', fzf.git_stash, { desc = 'Git stash' })
+map('n', '<leader>gh', fzf.git_hunks, { desc = 'Git hunks' })
 
 map('n', '<leader>ft', function()
   fzf.grep({

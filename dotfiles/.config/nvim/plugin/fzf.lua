@@ -19,6 +19,15 @@ fzf.setup({
       ['ctrl-n'] = 'preview-page-down',
     },
   },
+  oldfiles = {
+    actions = {
+      ['ctrl-i'] = {
+        fn = function(_, opts)
+          fzf.oldfiles({ cwd_only = not opts.cwd_only })
+        end,
+      },
+    },
+  },
   git = {
     status = {
       winopts = { fullscreen = true },

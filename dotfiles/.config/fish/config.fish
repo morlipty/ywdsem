@@ -5,7 +5,7 @@ end
 function fish_user_key_bindings
     fish_vi_key_bindings
     bind -M insert ctrl-z '__fish_echo fg 2>/dev/null'
-    bind -M insert ctrl-\; y
+    bind -M insert ctrl-\; '__fish_echo y' 
 end
 
 if status is-interactive

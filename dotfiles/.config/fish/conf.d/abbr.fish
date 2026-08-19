@@ -3,7 +3,7 @@ abbr -a -- n nvim
 abbr -a -- s systemctl
 abbr -a -- j journalctl
 abbr -a --set-cursor -- e 'eza --icons -a%'
-abbr -a --set-cursor -- el 'eza --icons --header --git --loc -al%'
+abbr -a --set-cursor -- el 'eza --icons --header --git -al%'
 
 #package manager
 abbr -a -- yu 'yay -Pw && yay'

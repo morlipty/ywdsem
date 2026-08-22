@@ -15,5 +15,5 @@ hash = "f281261ff04ad7ec867c3f802a50835f"
 
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-mocha"
-rev = "be0b21d"
+rev = "20b47bf"
 hash = "ce320f877fe709b189433941aba747c4"

@@ -13,8 +13,8 @@ map('n', 'N', 'Nzzzv')
 
 -- Motion and search
 map('n', '<C-h>', '^')
-map('n', '<C-j>', '*')
-map('n', '<C-k>', '#')
+map('n', '<C-j>', '5j')
+map('n', '<C-k>', '5k')
 map('n', '<C-l>', '$')
 
 -- Better movement in insert mode

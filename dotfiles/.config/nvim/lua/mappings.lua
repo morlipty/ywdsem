@@ -41,25 +41,15 @@ end, {
   desc = 'Visually select changed text',
 })
 
-local function map_toggle(key, name, toggle)
-  map('n', '<leader>t' .. key, function()
-    local is_enabled
-    if type(toggle) == 'string' then
-      is_enabled = not vim.wo[toggle]
-      vim.wo[toggle] = is_enabled
-    elseif type(toggle) == 'table' then
-      is_enabled = not toggle.is_enabled({ bufnr = 0 })
-      toggle.enable(is_enabled, { bufnr = 0 })
-    elseif type(toggle) == 'function' then
-      is_enabled = toggle()
-    end
-    vim.notify(('%s: %s'):format(name, is_enabled and 'On' or 'Off'))
-  end, { desc = 'Toggle ' .. name })
-end
+-- Toggles
+map('n', '<leader>tw', '<Cmd>setl wrap!<CR>', { desc = 'Toggle Wrapping' })
+map('n', '<leader>ts', '<Cmd>setl spell!<CR>', { desc = 'Toggle Spell' })
+map('n', '<leader>tr', '<Cmd>setl rnu!<CR>', { desc = 'Toggle Relative numbers' })
 
-map_toggle('w', 'Wrapping', 'wrap')
-map_toggle('s', 'Spell checking', 'spell')
-map_toggle('r', 'Relative numbers', 'relativenumber')
+map('n', '<leader>ti', function()
+  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+end, { desc = 'Toggle LSP inlay hints' })
 
-map_toggle('i', 'LSP inlay hints', vim.lsp.inlay_hint)
-map_toggle('c', 'Codelens', vim.lsp.codelens)
+map('n', '<leader>tc', function()
+  vim.lsp.codelens.enable(not vim.lsp.codelens.is_enabled())
+end, { desc = 'Toggle Codelens' })

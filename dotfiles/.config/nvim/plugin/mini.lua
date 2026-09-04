@@ -38,20 +38,20 @@ require('mini.git').setup()
 require('mini.hipatterns').setup({
   highlighters = {
     fixme = {
-      pattern = '()%[FIXME%]()',
-      group = 'DiagnosticSignError',
+      pattern = '%f[%w]()FIXME()%f[%W]',
+      group = 'MiniHipatternsFixme',
     },
     hack = {
-      pattern = '()%[HACK%]()',
-      group = 'DiagnosticSignWarn',
+      pattern = '%f[%w]()HACK()%f[%W]',
+      group = 'MiniHipatternsHack',
     },
     todo = {
-      pattern = '()%[TODO%]()',
-      group = 'DiagnosticSignInfo',
+      pattern = '%f[%w]()TODO()%f[%W]',
+      group = 'MiniHipatternsTodo',
     },
     note = {
-      pattern = '()%[NOTE%]()',
-      group = 'DiagnosticSignHint',
+      pattern = '%f[%w]()NOTE()%f[%W]',
+      group = 'MiniHipatternsNote',
     },
   },
 })

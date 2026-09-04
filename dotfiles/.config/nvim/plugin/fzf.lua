@@ -85,7 +85,7 @@ map('n', '<leader>gh', fzf.git_hunks, { desc = 'Git hunks' })
 
 map('n', '<leader>ft', function()
   fzf.grep({
-    search = '\\[(TODO|FIXME|HACK|NOTE)\\]',
+    search = '\\b(TODO|FIXME|HACK|NOTE)\\b',
     no_esc = true,
   })
-end, { desc = 'Search for TODOS etc' })
+end, { desc = 'Search for TODOs etc' })

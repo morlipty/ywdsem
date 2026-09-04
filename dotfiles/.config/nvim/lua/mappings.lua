@@ -42,9 +42,9 @@ end, {
 })
 
 -- Toggles
-map('n', '<leader>tw', '<Cmd>setl wrap!<CR>', { desc = 'Toggle Wrapping' })
-map('n', '<leader>ts', '<Cmd>setl spell!<CR>', { desc = 'Toggle Spell' })
-map('n', '<leader>tr', '<Cmd>setl rnu!<CR>', { desc = 'Toggle Relative numbers' })
+map('n', '<leader>tw', '<Cmd>setlocal wrap!<CR>', { desc = 'Toggle Wrapping' })
+map('n', '<leader>ts', '<Cmd>setlocal spell!<CR>', { desc = 'Toggle Spell' })
+map('n', '<leader>tr', '<Cmd>setlocal relativenumber!<CR>', { desc = 'Toggle Relative numbers' })
 
 map('n', '<leader>ti', function()
   vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())

@@ -22,3 +22,8 @@ desc = "Go to ~/ywdsem"
 on = ["g", "r"]
 run = 'shell -- ya emit cd "$(git rev-parse --show-toplevel)"'
 desc = "Root of the current Git repository"
+
+[[mgr.prepend_keymap]]
+on = ["g", "C"]
+run = "plugin vcs-files"
+desc = "Show Git file changes"

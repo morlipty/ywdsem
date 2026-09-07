@@ -70,9 +70,10 @@ map('n', '<leader>fo', fzf.oldfiles, { desc = 'Oldfiles' })
 map('n', '<leader>fl', fzf.live_grep, { desc = 'Live grep search' })
 map('x', '<leader>fl', fzf.grep_visual, { desc = 'Live grep search' })
 map('n', '<leader>fc', fzf.grep_curbuf, { desc = 'Current buf grep search' })
-map('n', '<leader>fs', fzf.spell_suggest, { desc = 'Spell suggest' })
+map('n', '<leader>fs', fzf.lsp_document_symbols, { desc = 'Document Symbols' })
 map('n', '<leader>fd', fzf.diagnostics_document, { desc = 'Documents Diagnostics' })
 map('n', '<leader>fD', fzf.diagnostics_workspace, { desc = 'Workspace Diagnostics' })
+map('n', 'z=', fzf.spell_suggest, { desc = 'Spell suggest' })
 
 -- Git
 map('n', '<leader>gg', fzf.git_status, { desc = 'Git status' })

@@ -8,7 +8,27 @@ local map = vim.keymap.set
 local dap = require('dap')
 local dap_view = require('dap-view')
 
-vim.fn.sign_define('DapBreakpoint', { text = '🐞' })
+vim.fn.sign_define('DapStopped', {
+  text = ' ',
+  texthl = 'DiagnosticWarn',
+  linehl = 'DapStoppedLine',
+  numhl = 'DapStoppedLine',
+})
+
+vim.fn.sign_define('DapBreakpoint', {
+  text = ' ',
+  texthl = 'DiagnosticInfo',
+})
+
+vim.fn.sign_define('DapBreakpointCondition', {
+  text = ' ',
+  texthl = 'DiagnosticInfo',
+})
+
+vim.fn.sign_define('DapBreakpointRejected', {
+  text = ' ',
+  texthl = 'DiagnosticError',
+})
 
 dap_view.setup({
   auto_toggle = true,

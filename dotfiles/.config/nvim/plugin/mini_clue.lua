@@ -6,7 +6,7 @@ mini_clue.setup({
   },
   triggers = {
     -- Leader triggers
-    { mode = { 'n', 'x' }, keys = '<Leader>' },
+    { mode = { 'n', 'x' }, keys = '<leader>' },
 
     -- `[` and `]` keys
     { mode = 'n', keys = '[' },
@@ -37,11 +37,17 @@ mini_clue.setup({
   },
 
   clues = {
-    { mode = 'n', keys = '<Leader>f', desc = '+FzfLua' },
-    { mode = 'n', keys = '<Leader>g', desc = '+Git' },
-    { mode = 'n', keys = '<Leader>d', desc = '+DAP' },
-    { mode = 'n', keys = '<Leader>m', desc = '+MINI' },
-    { mode = 'n', keys = '<Leader>t', desc = '+Toggle' },
+    { mode = 'n', keys = '<leader>f', desc = '+FzfLua' },
+    { mode = 'n', keys = '<leader>g', desc = '+Git' },
+    { mode = 'n', keys = '<leader>m', desc = '+MINI' },
+    { mode = 'n', keys = '<leader>t', desc = '+Toggle' },
+    { mode = 'n', keys = '<leader>d', desc = '+DAP' },
+
+    { mode = 'n', keys = '<leader>dn', postkeys = '<leader>d' },
+    { mode = 'n', keys = '<leader>di', postkeys = '<leader>d' },
+    { mode = 'n', keys = '<leader>do', postkeys = '<leader>d' },
+    { mode = 'n', keys = '<leader>dN', postkeys = '<leader>d' },
+
     mini_clue.gen_clues.square_brackets(),
     mini_clue.gen_clues.builtin_completion(),
     mini_clue.gen_clues.g(),

@@ -6,58 +6,37 @@ vim.pack.add({
 local map = vim.keymap.set
 
 local dap = require('dap')
-local widgets = require('dap.ui.widgets')
+local dap_view = require('dap-view')
 
 vim.fn.sign_define('DapBreakpoint', { text = '🐞' })
 
-map('n', '<Leader>dc', function()
-  dap.continue()
-end, { desc = 'Continue' })
+dap_view.setup({
+  auto_toggle = true,
+  winbar = {
+    controls = {
+      enabled = true,
+    },
+  },
+  virtual_text = {
+    enabled = true,
+  },
+})
 
-map('n', '<Leader>dso', function()
-  dap.step_over()
-end, { desc = 'Step over' })
+map('n', '<leader>dv', dap_view.toggle, { desc = 'Toggle dap-view' })
+map('n', '<leader>dt', dap_view.virtual_text_toggle, { desc = 'Toggle virtual text' })
+map('n', '<leader>dh', dap_view.hover, { desc = 'Hover' })
+map('n', '<leader>dw', dap_view.add_expr, { desc = 'watch' })
 
-map('n', '<Leader>dsi', function()
-  dap.step_into()
-end, { desc = 'Step into' })
+map('n', '<leader>dc', dap.continue, { desc = 'Continue' })
+map('n', '<leader>dl', dap.run_last, { desc = 'Run last' })
+map('n', '<leader>dt', dap.terminate, { desc = 'Terminate' })
+map('n', '<leader>dd', dap.toggle_breakpoint, { desc = 'Toggle breakpoint' })
+map('n', '<leader>db', function()
+  dap.set_breakpoint(vim.fn.input('Condition: '))
+end, { desc = 'Conditional breakpoint' })
 
-map('n', '<Leader>dsO', function()
-  dap.step_out()
-end, { desc = 'Step out' })
-
-map('n', '<Leader>db', function()
-  dap.toggle_breakpoint()
-end, { desc = 'Toggle breakpoint' })
-
-map('n', '<Leader>dB', function()
-  dap.set_breakpoint()
-end, { desc = 'Set breakpoint' })
-
-map('n', '<Leader>dw', function()
-  dap.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))
-end, { desc = 'Set breakpoint with log point message' })
-
-map('n', '<Leader>dr', function()
-  dap.repl.open()
-end, { desc = 'REPL' })
-
-map('n', '<Leader>dl', function()
-  dap.run_last()
-end, { desc = 'Run last' })
-
-map({ 'n', 'x' }, '<Leader>dh', function()
-  widgets.hover()
-end, { desc = 'Hover' })
-
-map({ 'n', 'x' }, '<Leader>dp', function()
-  widgets.preview()
-end, { desc = 'Preview' })
-
-map('n', '<Leader>df', function()
-  widgets.centered_float(widgets.frames)
-end, { desc = 'Frames' })
-
-map('n', '<Leader>ds', function()
-  widgets.centered_float(widgets.scopes)
-end, { desc = 'Scopes' })
+map('n', '<leader>dn', dap.step_over, { desc = 'Step over' })
+map('n', '<leader>di', dap.step_into, { desc = 'Step into' })
+map('n', '<leader>do', dap.step_out, { desc = 'Step out' })
+map('n', '<leader>dN', dap.step_back, { desc = 'Step back' })
+map('n', '<leader>dr', dap.repl.open, { desc = 'REPL' })

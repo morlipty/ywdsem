@@ -7,6 +7,7 @@ local treesitter = require('nvim-treesitter')
 
 local parsers = {
   'c',
+  'make',
   'python',
   'lua',
   'bash',

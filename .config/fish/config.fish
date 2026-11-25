@@ -1,3 +1,7 @@
+if not status is-interactive
+    return 0
+end
+
 function fish_greeting
     fastfetch --config examples/13
 end
@@ -8,10 +12,8 @@ function fish_user_key_bindings
     bind -M insert ctrl-\; '__fish_echo y'
 end
 
-if status is-interactive
-    fzf --fish | source
-    starship init fish | source
-    zoxide init --cmd cd fish | source
-    eval (zellij setup --generate-auto-start fish | string collect)
-    fish_config theme choose catppuccin-mocha
-end
+fzf --fish | source
+starship init fish | source
+zoxide init --cmd cd fish | source
+eval (zellij setup --generate-auto-start fish | string collect)
+fish_config theme choose catppuccin-mocha
